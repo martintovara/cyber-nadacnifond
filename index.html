@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <meta charset="utf-8" />
+        <title>Klub nadačního fondu kybernetických sil</title>
+        <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+
+        <script src="https://kit.fontawesome.com/b0fb217637.js" crossorigin="anonymous"></script>
+
+        <script src="pkgs/particles-js/particles-cfg.js" defer></script>
+        <script src="pkgs/particles-js/particles.js"></script>
+
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
+
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+        <link rel="stylesheet" href="css/style.css" />
+        <script src="js/news.js"></script>
+        <script src="js/gallery.js"></script>
+        <script src="js/script.js"></script>
+    </head>
+
+    <body onscroll="menuHighlight();" onload="menuHighlight(); setMarginMain(); setUpMode();" onresize="setMarginMain();">
+        <div id="particles-js" class="div-particles w-100 h-100" style="min-width: 576px"></div>
+        <div class="sticky-top banner-div" style="box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.15)">
+            <div class="bg-light banner">
+                <div class="row row-cols-1 low-banner-row align-content-center">
+                    <div class="col-auto">
+                        <img src="img/logo.png" alt="logo" class="float-start logo" draggable="false" />
+                    </div>
+                </div>
+
+                <div class="row row-cols-3 banner-row">
+                    <div class="col-5 col-lg-4 d-flex align-items-center"></div>
+                    <div class="col-2 col-lg-4 text-center d-flex justify-content-center align-items-center centered-logo">
+                        <img src="img/logo.png" alt="logo" class="logo" draggable="false" />
+                    </div>
+                    <div class="col-5 col-lg-4 d-flex flex-column h-100">
+                        <div class="row row-cols-4 socials justify-content-end">
+                            <div class="col-auto">
+                                <a href="mailto:"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="row row-cols-auto justify-content-end mt-auto disable-select">
+                            <div class="mode pt-2 align-items-center">
+                                <div class="row">
+                                    <div class="col">
+                                        <i id="day-icon" class="fas fa-sun fa-xl"></i>
+                                    </div>
+                                    <div class="col">
+                                        <div class="form-check form-switch">
+                                            <input class="form-check-input" type="checkbox" role="switch" id="mode" aria-checked="false" />
+                                        </div>
+                                    </div>
+                                    <div class="col">
+                                        <i id="night-icon" class="fas fa-moon fa-xl"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-5 col-lg-4 d-flex flex-column h-100">
+                        <div class="row row-cols-4 socials justify-content-end">
+                            <div class="col-auto">
+                                <a href="mailto:"><i class="fa-solid fa-envelope"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href=""><i class="fa-brands fa-square-twitter"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light nav-border disable-select">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center menu" id="navbar">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item mx-3">
+                                <a class="nav-link active" aria-current="page" href="#home" id="nav-home">O nás</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link active" aria-current="page" href="#club" id="nav-club">Klub kybernetických sil</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link active" aria-current="page" href="#news" id="nav-news">Novinky a akce</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link active" aria-current="page" href="#gallery" id="nav-gallery">Galerie</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link active" aria-current="page" href="#contact" id="nav-contact">Kontakt</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid middle h-100">
+            <div class="container main d-flex flex-column">
+                <div class="main-content text-center" id="home">
+                    <!-- O nás -->
+                    <h1 class="section-name pt-5">O nás</h1>
+                    <hr class="hr-section mb-4" />
+                    <section class="section-content">
+                        <div class="article container shadow">
+                            <div class="p-2 container justify-content-center text-start article-content">
+                                <div class="row flex-wrap">
+                                    <div class="article-img">
+                                        <img src="img/cyberForces.png" alt="cyberForces" />
+                                    </div>
+                                    <div class="article-text">
+                                        Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Praesent vitae arcu tempor neque lacinia pretium. In enim a arcu imperdiet malesuada. Proin mattis
+                                        lacinia justo. Aenean placerat. Donec iaculis gravida nulla. Mauris elementum mauris vitae tortor. Duis risus. In convallis. Nullam justo enim, consectetuer
+                                        nec, ullamcorper ac, vestibulum in, elit. Maecenas sollicitudin. Duis risus. Duis ante orci, molestie vitae vehicula venenatis, tincidunt ac pede. Donec quis
+                                        nibh at felis congue commodo. Pellentesque sapien. Ut tempus purus at lorem. Maecenas libero. Praesent id justo in neque elementum ultrices.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Klub -->
+                <div class="main-content text-center page-divider" id="club">
+                    <h1 class="section-name pt-5 pb-0">Klub kybernetických sil</h1>
+                    <hr class="hr-section mb-4" />
+                    <section class="section-content">
+                        <div class="article container shadow mb-5">
+                            <div class="d-flex justify-content-center text-center p-3">
+                                <h3 class="article-header">Název, forma a sídlo</h3>
+                            </div>
+                            <div class="container text-start article-content">
+                                <div class="row">
+                                    <div class="col-auto p-3 article-text border-0">
+                                        <p>
+                                            Klub Lorem Ipsum, z.s. (dále jen "Spolek") je spolkem podle § 214 a násl. zákona č. 89/2012 Sb., lorem ipsum dolor sit amet (dále jen "zákon"), zapsaným ve
+                                            spolkovém rejstříku vedeném u Krajského soudu v Brně pod spisovou značkou L 12345. Má sídlo v ulici Dolor Sit Amet 123/1, PSČ 123 45. Identifikační číslo
+                                            spolku je 01234567, DIČ CZ01234567.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article container shadow mb-5">
+                            <div class="d-flex justify-content-center text-center p-2">
+                                <h3 class="article-header">Charakter</h3>
+                            </div>
+                            <div class="container text-start article-content">
+                                <div class="row">
+                                    <div class="col-auto p-3 article-text border-0">
+                                        <p>
+                                            Spolek je dobrovolným, nevládním, neziskovým sdružením občanů, v němž se sdružili zaměstnanci ve služebním a pracovním poměru speciálních sil. Spolek ve své
+                                            činnosti vychází z Ústavy České republiky, Listiny základních práv a svobod, která je součástí ústavního práva České republiky a mezinárodních dohod, jimiž
+                                            je Česká republika vázána a ze zákonů České republiky.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article container shadow mb-5">
+                            <div class="d-flex justify-content-center text-center p-2">
+                                <h3 class="article-header">Cíle činnosti</h3>
+                            </div>
+                            <div class="container text-start article-content">
+                                <div class="row">
+                                    <div class="col-auto p-3 article-text border-0">
+                                        <ul>
+                                            <li>
+                                                Podílet se demokratickými metodami a v souladu s právními předpisy na formulování, účinné obhajobě, uspokojování a prosazování právem chráněných potřeb
+                                                a zájmů členů Spolku;
+                                            </li>
+                                            <li>Poskytovat obecně prospěšné činnosti v oblasti občanské, ekonomické, sociální, zdravotní, sportovní a kulturní povahy;</li>
+                                            <li>Přispívat k vytváření kontaktů a udržování dobrých vztahů mezi členy Spolku a veřejností a k upevňování prestiže ve společnosti;</li>
+                                            <li>
+                                                Přispívat k vytváření kontaktů a udržování dobrých vztahů mezi současnými zaměstnanci ve služebním, nebo pracovním poměru a vysloužilými zaměstnanci,
+                                                kterým služební, nebo pracovní poměr skončil, a rozvíjet mezi nimi vzájemnou spolupráci a předávání zkušeností;
+                                            </li>
+                                            <li>Udržovat a rozvíjet tradice.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Novinky a akce -->
+                <div class="main-content text-center page-divider" id="news">
+                    <h1 class="section-name pt-5 pb-0">Novinky a akce</h1>
+                    <hr class="hr-section mb-4" />
+                    <section class="section-content" id="newsArticles">
+                        <script>
+                            createArticleGallery();
+                        </script>
+                    </section>
+                </div>
+
+                <div class="main-content text-center page-divider" id="gallery">
+                    <!-- Galerie -->
+                    <h1 class="section-name pt-5">Galerie</h1>
+                    <hr class="hr-section mb-4" />
+                    <section class="section-content">
+                        <div class="container p-3">
+                            <div class="row justify-content-center">
+                                <div class="article container shadow article-gallery">
+                                    <div id="carouselGallery" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                        <div class="carousel-indicators carousel-indicators-gallery"></div>
+                                        <div class="carousel-inner carousel-inner-gallery"></div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Předchozí</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Další</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Modal for Fullscreen Image -->
+                        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-body">
+                                        <img id="fullscreenImage" class="img-fluid" alt="Fullscreen Image" />
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="main-content text-center page-divider" id="contact">
+                    <h1 class="section-name pt-5 pb-0">Kontakt</h1>
+                    <hr class="hr-section mb-4" />
+                    <section class="section-content">
+                        <h3 class="article-header mb-3 d-none">To jsme my</h3>
+                        <div class="container p-3">
+                            <div class="row justify-content-center">
+                                <div class="col-11 mb-3 members p-2 shadow">
+                                    <figure>
+                                        <img src="img/members.jpeg" alt="Members" class="shadow w-100" style="border-radius: 10px" />
+                                        <figcaption class="justify-content-center pt-4">
+                                            <span
+                                                class="fw-light"
+                                                style="cursor: pointer"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Kliknutím zkopírovat emailovou adresu"
+                                                onclick="copyEmail();"
+                                                id="email">
+                                                SWE.BrnoAffiliate@gmail.com
+                                            </span>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-1 mb-3 p-2 contact-icons justify-content-center gy-5">
+                                    <div>
+                                        <a href="mailto:SWE.BrnoAffiliate@gmail.com" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktuje nás skrze náš email!">
+                                            <i class="fa-solid fa-envelope"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://www.facebook.com/SWEBrno" target="_blank" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktujte nás na našem Facebooku!">
+                                            <i class="fa-brands fa-square-facebook"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://twitter.com/swetalk?lang=cs" class="m-3"><i class="fa-brands fa-square-twitter"></i></a>
+                                    </div>
+                                    <div>
+                                        <a href="http://www.linkedin.com/groups?home=&gid=69390" class="m-3"><i class="fa-brands fa-linkedin"></i></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="footer footer-border w-100">
+                    <div class="row justify-content-center pt-2">
+                        <div class="col-auto">
+                            <a href="https://swe.org/membership/" target="_blank">MEMBERSHIP</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://swe.org/learning/" target="_blank">LEARNING</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://swe.org/scholarships/" target="_blank">SCHOLARSHIPS</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://swe.org/support-swe/" target="_blank">SUPPORT SWE</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://swe.org/k-12-outreach/" target="_blank">OUTREACH</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://careers.swe.org/" target="_blank">CAREER CENTER</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://swe.org/about-swe/swe-magazine/" target="_blank">SWE MAGAZINE</a>
+                        </div>
+                        <div class="col-auto">
+                            <a href="https://swe.org/membership/international-membership/" target="_blank">INTERNATIONAL</a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center footer-nextRow pt-1">
+                        <div class="col-auto">
+                            <a href="https://alltogether.swe.org/" target="_blank">ALL TOGETHER</a>
+                        </div>
+                        |
+                        <div class="col-auto">
+                            <a href="https://swe.org/about-swe/" target="_blank">ABOUT SWE</a>
+                        </div>
+                        |
+                        <div class="col-auto">
+                            <a href="https://swe.org/about-swe/governance/board-of-directors/" target="_blank">LEADERSHIP</a>
+                        </div>
+                        |
+                        <div class="col-auto">
+                            <a href="https://research.swe.org/" target="_blank">TRENDS & STATS</a>
+                        </div>
+                        |
+                        <div class="col-auto">
+                            <a href="https://swe.org/about-swe/privacy-policy/" target="_blank">PRIVACY POLICY</a>
+                        </div>
+                        |
+                        <div class="col-auto">
+                            <a href="https://swe.org/about-swe/privacy-policy/" target="_blank">SWE STORE</a>
+                        </div>
+                        |
+                        <div class="col-auto">
+                            <a href="https://swe.org/events/" target="_blank">CALENDAR</a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center footer-nextRow pt-3 wrap-text text-center footer-address">
+                        <div class="col-auto">
+                            <b>SWE HQ:</b>
+                            130 East Randolph Street, Suite 3500 Chicago, IL 60601 | T. 1.312.596.5223 | For questions or comments, please email
+                            <a href="mailto:hq@swe.org" class="footer-mailto">hq@swe.org</a>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center footer-nextRow wrap-text pt-1 footer-address">
+                        <div class="col-auto">Copyright © 2024 Society of Women Engineers | All rights reserved.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                addCarouselGalleryImgs();
+            });
+        </script>
+    </body>
+</html>
