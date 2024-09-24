@@ -188,7 +188,6 @@ function createArticle(headerText, articleText, articleImgs, aux) {
     document.getElementById('newsArticles').appendChild(article);
 
     addCarouselArticleImgs(articleImgs, aux);
-
     aux++;
 }
 
@@ -206,7 +205,7 @@ function addCarouselArticleImgs(arrImgs, aux) {
         document.getElementById('innerCarousel' + aux).appendChild(item);
 
         //Indicators
-        const parentElement = document.querySelector('.carousel-indicators-article');
+        const parentElement = document.querySelector('.carousel-indicators-article' + aux);
         parentElement.classList.add('d-none');
         const button1 = document.createElement('button');
         button1.type = 'button';
@@ -226,13 +225,13 @@ function addCarouselArticleImgs(arrImgs, aux) {
     }
 
     document.getElementById('carousel' + aux).onmouseenter = function () {
-        document.querySelector('.carousel-indicators-article').classList.remove('d-none');
+        document.querySelector('.carousel-indicators-article' + aux).classList.remove('d-none');
         document.getElementById('prev-carousel' + aux).classList.remove('d-none');
         document.getElementById('next-carousel' + aux).classList.remove('d-none');
     };
 
     document.getElementById('carousel' + aux).onmouseleave = function () {
-        document.querySelector('.carousel-indicators-article').classList.add('d-none');
+        document.querySelector('.carousel-indicators-article' + aux).classList.add('d-none');
         document.getElementById('prev-carousel' + aux).classList.add('d-none');
         document.getElementById('next-carousel' + aux).classList.add('d-none');
     };
@@ -251,7 +250,7 @@ function createCarousel(row, aux) {
 
     // Create the indicators container
     const indicators = document.createElement('div');
-    indicators.className = 'carousel-indicators carousel-indicators-article';
+    indicators.className = 'carousel-indicators carousel-indicators-article' + aux;
     carousel.appendChild(indicators);
 
     // Create the inner container for carousel items
@@ -316,10 +315,11 @@ function createArticleGallery() {
         return;
     }
 
-    const aux = 0;
+    let aux = 0;
 
     for (const dataArticle of dataArticles) {
         createArticle(dataArticle.header, dataArticle.text, dataArticle.imgs, aux);
+        aux++;
     }
 }
 
