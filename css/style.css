@@ -224,7 +224,6 @@ h3 {
     height: auto;
     color: rgba(0, 0, 0, 0.6);
     font-size: 11.5pt;
-    padding-bottom: 1rem;
 }
 
 .footer-border {
@@ -236,18 +235,9 @@ h3 {
     color: rgba(0, 0, 0, 0.4);
 }
 
-.footer-nextRow {
-    font-size: smaller;
-}
-
-.footer-address {
+.footer-info {
     font-size: 8pt;
     cursor: default;
-}
-
-.footer-mailto {
-    text-decoration: none;
-    color: rgba(0, 0, 0, 0.7);
 }
 
 .footer a:hover {
@@ -286,15 +276,17 @@ h3 {
 }
 
 .article-text {
-    padding: 1%;
+    padding: 20px;
 }
 
 .article-gallery {
     max-height: 50vh;
+    min-height: 300px;
 }
 
 .article-divider {
-    border-left: 1px dashed rgba(0, 0, 0, 0.3);
+    border-right: 4px dashed transparent;
+    border-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%) 1; /* Gradient fading out at top and bottom */
 }
 
 .carousel {
@@ -320,16 +312,16 @@ h3 {
     object-fit: contain;
 }
 
-.carousel-control-next,
-.carousel-control-prev {
-    filter: invert(100%);
-}
-
 .hr-section {
     width: 75%;
     color: rgba(0, 0, 0, 0.3);
     margin-left: 12.5% !important;
     margin-right: 12.5% !important;
+}
+
+#gallery .carousel-control-next,
+#gallery .carousel-control-prev {
+    filter: invert(100%);
 }
 
 .hr-events {
@@ -362,14 +354,32 @@ h3 {
     user-select: none;
 }
 
-@media screen and (max-width: 992px) {
-    .title {
-        display: none;
-    }
+.theme-switch {
+    cursor: pointer;
+    color: #eee;
+    width: 10%;
+    min-width: 75px;
+}
 
-    .article-text {
-        border-left: none;
-        border-top: 1px dashed rgba(0, 0, 0, 0.3);
+.theme-switch i:hover {
+    scale: 1.1;
+    transition: all 0.4s ease-in-out;
+}
+
+.acr-logo {
+    -webkit-filter: drop-shadow(5px 5px 5px #222);
+    filter: drop-shadow(5px 5px 5px #222);
+}
+
+.text-color-my {
+    color: var(--main-color);
+}
+
+@media screen and (max-width: 992px) {
+    .article-middle {
+        width: 97%;
+        border-top: 4px dashed transparent;
+        border-image: linear-gradient(to left, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%) 1;
     }
 
     .news-with-img {
@@ -382,11 +392,9 @@ h3 {
     .menu-item-active:after {
         border: none;
     }
-}
 
-@media screen and (max-width: 759px) {
-    .banner-row {
-        display: none;
+    .carousel-full-width {
+        width: 100% !important;
     }
 }
 

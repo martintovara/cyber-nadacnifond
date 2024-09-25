@@ -129,30 +129,28 @@ function addCarouselGalleryImgs() {
     }
 }
 
-function setUpMode() {
-    const mode = detectOSTheme();
-    if (mode === 'light') {
-        document.querySelector('.fa-sun').style.color = 'yellow';
+function switchMode() {
+    const themeIcon = document.getElementById('theme-icon');
+
+    if (themeIcon.classList.contains('fa-sun')) {
+        //Switch to dark mode
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
     } else {
-        document.querySelector('.fa-moon').style.color = '#F6F1D5';
+        //Switch to light mode
+        themeIcon.classList.remove('fa-moon');
+        themeIcon.classList.add('fa-sun');
     }
 }
 
 function detectOSTheme() {
-    const isDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    if (isDarkMode) {
-        return 'dark';
-    } else {
-        return 'light';
-    }
+    return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
 function createArticle(headerText, articleText, articleImgs, aux) {
     // Create the main container div
     const article = document.createElement('div');
-    article.classList.add('article', 'container', 'shadow', 'mb-5');
-    article.style.height = '400px'; // You might want to adjust this height based on content
+    article.classList.add('article', 'container-fluid', 'shadow', 'mb-5');
 
     // Create the header section
     const headerContainer = document.createElement('div');
@@ -164,23 +162,31 @@ function createArticle(headerText, articleText, articleImgs, aux) {
 
     // Create the content section
     const contentContainer = document.createElement('div');
-    contentContainer.classList.add('p-2', 'container', 'justify-content-center', 'text-start', 'article-content', 'h-100');
+    contentContainer.classList.add('p-2', 'container-fluid', 'justify-content-center', 'article-content');
 
     const row = document.createElement('div');
     row.classList.add('row');
-    row.style.height = '80%';
 
-    createCarousel(row, aux);
+    // First column
+    const col = document.createElement('div');
+    col.classList.add('col-12', 'col-lg-6', 'article-text', 'text-center', 'align-self-center', 'text-center');
+    createCarousel(col, aux);
+    row.appendChild(col);
 
-    // Create the second column
+    // Middle column
+    const colMiddle = document.createElement('div');
+    colMiddle.classList.add('col-auto', 'text-center', 'article-divider', 'article-middle');
+    colMiddle.style.marginRight = '2.5%';
+    colMiddle.style.marginLeft = '1.5%';
+    row.appendChild(colMiddle);
+
+    // Second column
     const col2 = document.createElement('div');
+    col2.classList.add('col-12', 'col-lg-5', 'article-text', 'text-center', 'align-self-center');
     col2.innerHTML = articleText;
-    col2.classList.add('col-12', 'col-lg-6', 'p-3', 'article-text', 'article-divider', 'text-center');
-
     row.appendChild(col2);
 
     contentContainer.appendChild(row);
-
     article.appendChild(headerContainer);
     article.appendChild(contentContainer);
 
@@ -188,6 +194,7 @@ function createArticle(headerText, articleText, articleImgs, aux) {
     document.getElementById('newsArticles').appendChild(article);
 
     addCarouselArticleImgs(articleImgs, aux);
+
     aux++;
 }
 
@@ -237,12 +244,11 @@ function addCarouselArticleImgs(arrImgs, aux) {
     };
 }
 
-function createCarousel(row, aux) {
+function createCarousel(col, aux) {
     // Create the main carousel container
     const carousel = document.createElement('div');
     carousel.id = 'carousel' + aux;
-    carousel.style.width = '50%';
-    carousel.className = 'carousel slide carousel-fade';
+    carousel.className = 'carousel slide carousel-fade carousel-full-width';
 
     carousel.setAttribute('data-toggle', 'tooltip');
     carousel.setAttribute('title', 'Klikněte pro zobrazení v plném rozlišení');
@@ -255,7 +261,7 @@ function createCarousel(row, aux) {
 
     // Create the inner container for carousel items
     const inner = document.createElement('div');
-    inner.className = 'carousel-inner carousel' + aux;
+    inner.className = 'text-center carousel-inner carousel' + aux;
     inner.id = 'innerCarousel' + aux;
     inner.style.cursor = 'pointer';
     inner.onclick = function () {
@@ -307,7 +313,7 @@ function createCarousel(row, aux) {
     carousel.appendChild(prevButton);
     carousel.appendChild(nextButton);
 
-    row.appendChild(carousel);
+    col.appendChild(carousel);
 }
 
 function createArticleGallery() {

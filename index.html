@@ -31,17 +31,11 @@
         <script src="js/script.js"></script>
     </head>
 
-    <body onscroll="menuHighlight();" onload="menuHighlight(); setMarginMain(); setUpMode();" onresize="setMarginMain();">
+    <body onscroll="menuHighlight();" onload="menuHighlight(); setMarginMain();" onresize="setMarginMain();">
         <div id="particles-js" class="div-particles w-100 h-100" style="min-width: 576px"></div>
         <div class="sticky-top banner-div" style="box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.15)">
             <div class="bg-light banner">
-                <div class="row row-cols-1 low-banner-row align-content-center">
-                    <div class="col-auto">
-                        <img src="img/logo.png" alt="logo" class="float-start logo" draggable="false" />
-                    </div>
-                </div>
-
-                <div class="row row-cols-3 banner-row">
+                <div class="row row-cols-2 banner-row">
                     <div class="col-5 col-lg-4 d-flex align-items-center"></div>
                     <div class="col-2 col-lg-4 text-center d-flex justify-content-center align-items-center centered-logo">
                         <img src="img/logo.png" alt="logo" class="logo" draggable="false" />
@@ -58,34 +52,13 @@
                                 <a href=""><i class="fa-brands fa-square-twitter"></i></a>
                             </div>
                         </div>
-                        <div class="row row-cols-auto justify-content-end mt-auto disable-select">
+                        <div class="row row-cols-auto justify-content-end mt-auto disable-select" style="margin-right: 0.5%">
                             <div class="mode pt-2 align-items-center">
-                                <div class="row">
-                                    <div class="col">
-                                        <i id="day-icon" class="fas fa-sun fa-xl"></i>
-                                    </div>
-                                    <div class="col">
-                                        <div class="form-check form-switch">
-                                            <input class="form-check-input" type="checkbox" role="switch" id="mode" aria-checked="false" />
-                                        </div>
-                                    </div>
-                                    <div class="col">
-                                        <i id="night-icon" class="fas fa-moon fa-xl"></i>
+                                <div class="row pt-1 text-center">
+                                    <div class="col theme-switch" data-bs-toggle="tooltip" data-bs-placement="top" title="Přepnout na světlý/tmavý mód">
+                                        <i class="fas fa-sun fa-xl" id="theme-icon" onclick="switchMode();"></i>
                                     </div>
                                 </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-5 col-lg-4 d-flex flex-column h-100">
-                        <div class="row row-cols-4 socials justify-content-end">
-                            <div class="col-auto">
-                                <a href="mailto:"><i class="fa-solid fa-envelope"></i></a>
-                            </div>
-                            <div class="col-auto">
-                                <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-                            </div>
-                            <div class="col-auto">
-                                <a href=""><i class="fa-brands fa-square-twitter"></i></a>
                             </div>
                         </div>
                     </div>
@@ -248,7 +221,7 @@
                             <div class="modal-dialog modal-dialog-centered modal-lg">
                                 <div class="modal-content">
                                     <div class="modal-body">
-                                        <img id="fullscreenImage" class="img-fluid" alt="Fullscreen Image" />
+                                        <img id="fullscreenImage" class="img-fluid" alt="FullscreenScreen" />
                                     </div>
                                     <div class="modal-footer">
                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -259,18 +232,25 @@
                     </section>
                 </div>
 
+                <!-- Kontakt -->
                 <div class="main-content text-center page-divider" id="contact">
                     <h1 class="section-name pt-5 pb-0">Kontakt</h1>
                     <hr class="hr-section mb-4" />
                     <section class="section-content">
                         <h3 class="article-header mb-3 d-none">To jsme my</h3>
-                        <div class="container p-3">
+                        <div class="container p-3" style="width: 85%">
                             <div class="row justify-content-center">
-                                <div class="col-11 mb-3 members p-2 shadow">
-                                    <figure>
-                                        <img src="img/members.jpeg" alt="Members" class="shadow w-100" style="border-radius: 10px" />
-                                        <figcaption class="justify-content-center pt-4">
+                                <div class="col-11 mb-3 members p-2 shadow rounded bg-light">
+                                    <figure class="text-center">
+                                        <img src="img/acr_logo.png" alt="AČR logo" style="border-radius: 10px; width: 25%" class="mt-4 mb-4 acr-logo" />
+                                        <figcaption
+                                            class="justify-content-center pt-4 w-50 mx-auto shadow"
+                                            style="border: solid 1px rgba(0, 0, 0, 0.05); border-radius: 8px; padding: 10px; font-size: 13pt; margin-top: 1%">
+                                            <span class="text-color-my">V případě potřeby nás kontaktujte na:</span>
+                                            <br />
+                                            <br />
                                             <span
+                                                style="font-size: 14pt"
                                                 class="fw-light"
                                                 style="cursor: pointer"
                                                 data-toggle="tooltip"
@@ -278,27 +258,28 @@
                                                 title="Kliknutím zkopírovat emailovou adresu"
                                                 onclick="copyEmail();"
                                                 id="email">
-                                                SWE.BrnoAffiliate@gmail.com
+                                                loremIpsumEmail@lorem.cz
                                             </span>
+                                            <br />
+                                            <br />
                                         </figcaption>
                                     </figure>
                                 </div>
-                                <div class="col-1 mb-3 p-2 contact-icons justify-content-center gy-5">
+                                <div class="col-1 mb-3 p-2 contact-icons justify-content-center gy-1">
                                     <div>
-                                        <a href="mailto:SWE.BrnoAffiliate@gmail.com" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktuje nás skrze náš email!">
-                                            <i class="fa-solid fa-envelope"></i>
+                                        <a href="mailto:" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktuje nás skrze náš email!" style="color: #007bff">
+                                            <i class="fa-solid fa-envelope fa-2x"></i>
                                         </a>
                                     </div>
                                     <div>
-                                        <a href="https://www.facebook.com/SWEBrno" target="_blank" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktujte nás na našem Facebooku!">
-                                            <i class="fa-brands fa-square-facebook"></i>
+                                        <a href="" target="_blank" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktujte nás na našem Facebooku!" style="color: #3b5998">
+                                            <i class="fa-brands fa-square-facebook fa-2x"></i>
                                         </a>
                                     </div>
                                     <div>
-                                        <a href="https://twitter.com/swetalk?lang=cs" class="m-3"><i class="fa-brands fa-square-twitter"></i></a>
-                                    </div>
-                                    <div>
-                                        <a href="http://www.linkedin.com/groups?home=&gid=69390" class="m-3"><i class="fa-brands fa-linkedin"></i></a>
+                                        <a href="" class="m-3" style="color: #1da1f2">
+                                            <i class="fa-brands fa-square-twitter fa-2x"></i>
+                                        </a>
                                     </div>
                                 </div>
                             </div>
@@ -306,71 +287,12 @@
                     </section>
                 </div>
 
-                <div class="footer footer-border w-100">
-                    <div class="row justify-content-center pt-2">
-                        <div class="col-auto">
-                            <a href="https://swe.org/membership/" target="_blank">MEMBERSHIP</a>
+                <!-- Footer -->
+                <div class="footer footer-border w-100 pt-2">
+                    <div class="row justify-content-center footer-info">
+                        <div class="col-auto disable-select">
+                            <p>&copy; 2024 Armáda české republiky. Všechna práva vyhrazena.</p>
                         </div>
-                        <div class="col-auto">
-                            <a href="https://swe.org/learning/" target="_blank">LEARNING</a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://swe.org/scholarships/" target="_blank">SCHOLARSHIPS</a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://swe.org/support-swe/" target="_blank">SUPPORT SWE</a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://swe.org/k-12-outreach/" target="_blank">OUTREACH</a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://careers.swe.org/" target="_blank">CAREER CENTER</a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://swe.org/about-swe/swe-magazine/" target="_blank">SWE MAGAZINE</a>
-                        </div>
-                        <div class="col-auto">
-                            <a href="https://swe.org/membership/international-membership/" target="_blank">INTERNATIONAL</a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center footer-nextRow pt-1">
-                        <div class="col-auto">
-                            <a href="https://alltogether.swe.org/" target="_blank">ALL TOGETHER</a>
-                        </div>
-                        |
-                        <div class="col-auto">
-                            <a href="https://swe.org/about-swe/" target="_blank">ABOUT SWE</a>
-                        </div>
-                        |
-                        <div class="col-auto">
-                            <a href="https://swe.org/about-swe/governance/board-of-directors/" target="_blank">LEADERSHIP</a>
-                        </div>
-                        |
-                        <div class="col-auto">
-                            <a href="https://research.swe.org/" target="_blank">TRENDS & STATS</a>
-                        </div>
-                        |
-                        <div class="col-auto">
-                            <a href="https://swe.org/about-swe/privacy-policy/" target="_blank">PRIVACY POLICY</a>
-                        </div>
-                        |
-                        <div class="col-auto">
-                            <a href="https://swe.org/about-swe/privacy-policy/" target="_blank">SWE STORE</a>
-                        </div>
-                        |
-                        <div class="col-auto">
-                            <a href="https://swe.org/events/" target="_blank">CALENDAR</a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center footer-nextRow pt-3 wrap-text text-center footer-address">
-                        <div class="col-auto">
-                            <b>SWE HQ:</b>
-                            130 East Randolph Street, Suite 3500 Chicago, IL 60601 | T. 1.312.596.5223 | For questions or comments, please email
-                            <a href="mailto:hq@swe.org" class="footer-mailto">hq@swe.org</a>
-                        </div>
-                    </div>
-                    <div class="row justify-content-center footer-nextRow wrap-text pt-1 footer-address">
-                        <div class="col-auto">Copyright © 2024 Society of Women Engineers | All rights reserved.</div>
                     </div>
                 </div>
             </div>
