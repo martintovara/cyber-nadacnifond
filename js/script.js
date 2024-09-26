@@ -164,7 +164,6 @@ function detectOSTheme() {
 }
 
 function themeBasedOnUser() {
-    console.log(detectOSTheme());
     if (detectOSTheme() === 'dark') {
         themeIcon = document.getElementById('theme-icon');
         themeIcon.classList.remove('fa-sun');
