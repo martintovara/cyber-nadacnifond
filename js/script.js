@@ -148,15 +148,29 @@ function switchMode() {
         //Switch to dark mode
         themeIcon.classList.remove('fa-sun');
         themeIcon.classList.add('fa-moon');
+
+        document.getElementById('cssMode').href = 'css/dark.css';
     } else {
         //Switch to light mode
         themeIcon.classList.remove('fa-moon');
         themeIcon.classList.add('fa-sun');
+
+        document.getElementById('cssMode').href = 'css/light.css';
     }
 }
 
 function detectOSTheme() {
     return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+}
+
+function themeBasedOnUser() {
+    console.log(detectOSTheme());
+    if (detectOSTheme() === 'dark') {
+        themeIcon = document.getElementById('theme-icon');
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+        document.getElementById('cssMode').href = 'css/dark.css';
+    }
 }
 
 function createArticle(headerText, articleText, articleImgs, aux) {
@@ -244,15 +258,27 @@ function addCarouselArticleImgs(arrImgs, aux) {
     }
 
     document.getElementById('carousel' + aux).onmouseenter = function () {
+        const carouselDiv = document.querySelector('.carousel-indicators-article' + aux);
+        const buttonCount = carouselDiv.querySelectorAll('button').length;
+
         document.querySelector('.carousel-indicators-article' + aux).classList.remove('d-none');
-        document.getElementById('prev-carousel' + aux).classList.remove('d-none');
-        document.getElementById('next-carousel' + aux).classList.remove('d-none');
+
+        if (buttonCount > 1) {
+            document.getElementById('prev-carousel' + aux).classList.remove('d-none');
+            document.getElementById('next-carousel' + aux).classList.remove('d-none');
+        }
     };
 
     document.getElementById('carousel' + aux).onmouseleave = function () {
+        const carouselDiv = document.querySelector('.carousel-indicators-article' + aux);
+        const buttonCount = carouselDiv.querySelectorAll('button').length;
+
         document.querySelector('.carousel-indicators-article' + aux).classList.add('d-none');
-        document.getElementById('prev-carousel' + aux).classList.add('d-none');
-        document.getElementById('next-carousel' + aux).classList.add('d-none');
+
+        if (buttonCount > 1) {
+            document.getElementById('prev-carousel' + aux).classList.add('d-none');
+            document.getElementById('next-carousel' + aux).classList.add('d-none');
+        }
     };
 }
 

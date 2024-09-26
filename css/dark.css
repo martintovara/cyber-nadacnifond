@@ -1,0 +1,101 @@
+:root {
+    --bg-dark: #212121;
+}
+
+.mode-particles {
+    background-color: var(--bg-dark);
+}
+
+.mode-banner {
+    background-color: var(--bg-dark);
+}
+
+.logo {
+    -webkit-filter: drop-shadow(5px 5px 5px black);
+    filter: drop-shadow(5px 5px 5px black);
+}
+
+.mode-navbar {
+    background-color: #2a2a2a;
+}
+
+nav .navbar-nav li a {
+    color: lightgray;
+}
+
+nav .navbar-nav li a:hover {
+    color: white;
+}
+
+nav .navbar-nav li a:focus {
+    color: white;
+}
+
+.menu-item-active:after {
+    position: relative;
+    content: '';
+    width: 30%;
+    left: 35%;
+    display: block;
+    margin-top: 5px;
+    border-bottom: 2px dashed rgba(84, 69, 101, 0.6);
+    margin-bottom: -10px;
+    filter: invert(100%);
+}
+
+.menu-item-active {
+    text-shadow: 0px 0px 1px darkgray;
+}
+
+.main {
+    background-color: #222;
+    box-shadow: -30px 0 30px -30px rgba(0, 0, 0, 0.8), 30px 0 30px -30px rgba(0, 0, 0, 0.8);
+}
+
+.section-name {
+    text-shadow: 0px 0px 2px black;
+}
+
+.article {
+    background-color: #222;
+    box-shadow: 0 0.5rem 1rem #080808, 0 -0.2rem 0.75rem #080808 !important;
+}
+
+.article-text {
+    color: lightgray;
+}
+
+.article-divider {
+    filter: invert(100%);
+}
+
+#gallery .carousel-control-next,
+#gallery .carousel-control-prev {
+    filter: invert(0%);
+}
+
+.modal-body,
+.modal-footer {
+    background-color: var(--bg-dark);
+}
+
+.modal-footer {
+    border-top: solid 1px #4b4848;
+}
+
+.footer-info {
+    color: lightgray;
+}
+
+.dark-contact {
+    background-color: #222;
+    box-shadow: 0 0.3rem 0.6rem rgba(8, 8, 8, 0.6), 0 -0.1rem 0.4rem rgba(8, 8, 8, 0.5) !important;
+}
+
+.text-color-my {
+    color: lightgrey;
+}
+
+#email {
+    color: lightgray;
+}

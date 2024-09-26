@@ -17,7 +17,7 @@
 
         <script src="https://kit.fontawesome.com/b0fb217637.js" crossorigin="anonymous"></script>
 
-        <script src="pkgs/particles-js/particles-cfg.js" defer></script>
+        <script src="pkgs/particles-js/particles-cfg.js" defer id="particles-cfg"></script>
         <script src="pkgs/particles-js/particles.js"></script>
 
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -25,16 +25,25 @@
         <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet" />
 
         <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+
         <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/light.css" id="cssMode" />
+
         <script src="js/news.js"></script>
         <script src="js/gallery.js"></script>
         <script src="js/script.js"></script>
     </head>
 
     <body onscroll="menuHighlight();" onload="menuHighlight(); setMarginMain();" onresize="setMarginMain();">
-        <div id="particles-js" class="div-particles w-100 h-100" style="min-width: 576px"></div>
+        <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                addCarouselGalleryImgs();
+                themeBasedOnUser();
+            });
+        </script>
+        <div id="particles-js" class="div-particles w-100 h-100 mode-particles" style="min-width: 576px"></div>
         <div class="sticky-top banner-div" style="box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.15)">
-            <div class="bg-light banner">
+            <div class="banner mode-banner">
                 <div class="row row-cols-2 banner-row">
                     <div class="col-5 col-lg-4 d-flex align-items-center"></div>
                     <div class="col-2 col-lg-4 text-center d-flex justify-content-center align-items-center centered-logo">
@@ -64,7 +73,7 @@
                     </div>
                 </div>
             </div>
-            <nav class="navbar navbar-expand-lg navbar-light bg-light nav-border disable-select">
+            <nav class="navbar navbar-expand-lg mode-navbar nav-border disable-select">
                 <div class="container-fluid">
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
                         <i class="fas fa-bars"></i>
@@ -72,19 +81,19 @@
                     <div class="collapse navbar-collapse justify-content-center menu" id="navbar">
                         <ul class="navbar-nav mb-2 mb-lg-0">
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" aria-current="page" href="#home" id="nav-home">O nás</a>
+                                <a class="nav-link" aria-current="page" href="#home" id="nav-home">O nás</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" aria-current="page" href="#club" id="nav-club">Klub kybernetických sil</a>
+                                <a class="nav-link" aria-current="page" href="#club" id="nav-club">Klub kybernetických sil</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" aria-current="page" href="#news" id="nav-news">Novinky a akce</a>
+                                <a class="nav-link" aria-current="page" href="#news" id="nav-news">Novinky a akce</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" aria-current="page" href="#gallery" id="nav-gallery">Galerie</a>
+                                <a class="nav-link" aria-current="page" href="#gallery" id="nav-gallery">Galerie</a>
                             </li>
                             <li class="nav-item mx-3">
-                                <a class="nav-link active" aria-current="page" href="#contact" id="nav-contact">Kontakt</a>
+                                <a class="nav-link" aria-current="page" href="#contact" id="nav-contact">Kontakt</a>
                             </li>
                         </ul>
                     </div>
@@ -233,24 +242,23 @@
                 </div>
 
                 <!-- Kontakt -->
-                <div class="main-content text-center page-divider" id="contact">
+                <div class="main-content text-center page-divider" id="contact" style="min-width: 500px">
                     <h1 class="section-name pt-5 pb-0">Kontakt</h1>
                     <hr class="hr-section mb-4" />
                     <section class="section-content">
-                        <h3 class="article-header mb-3 d-none">To jsme my</h3>
                         <div class="container p-3" style="width: 85%">
                             <div class="row justify-content-center">
-                                <div class="col-11 mb-3 members p-2 shadow rounded bg-light">
+                                <div class="col-11 mb-3 members p-2 shadow rounded article">
                                     <figure class="text-center">
                                         <img src="img/acr_logo.png" alt="AČR logo" style="border-radius: 10px; width: 25%" class="mt-4 mb-4 acr-logo" />
                                         <figcaption
-                                            class="justify-content-center pt-4 w-50 mx-auto shadow"
+                                            class="justify-content-center pt-4 w-50 mx-auto shadow dark-contact"
                                             style="border: solid 1px rgba(0, 0, 0, 0.05); border-radius: 8px; padding: 10px; font-size: 13pt; margin-top: 1%">
                                             <span class="text-color-my">V případě potřeby nás kontaktujte na:</span>
                                             <br />
                                             <br />
                                             <span
-                                                style="font-size: 14pt"
+                                                style="font-size: 14pt; word-wrap: break-word; white-space: normal"
                                                 class="fw-light"
                                                 style="cursor: pointer"
                                                 data-toggle="tooltip"
@@ -297,10 +305,5 @@
                 </div>
             </div>
         </div>
-        <script>
-            document.addEventListener('DOMContentLoaded', () => {
-                addCarouselGalleryImgs();
-            });
-        </script>
     </body>
 </html>

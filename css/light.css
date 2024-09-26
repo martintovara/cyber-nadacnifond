@@ -1,0 +1,39 @@
+:root {
+    --bg-light: #f5f5f5;
+}
+
+.mode-particles {
+    background-color: white;
+}
+
+.mode-banner {
+    background-color: white;
+}
+
+.mode-navbar {
+    background-color: var(--bg-light);
+}
+
+.menu ul li:hover {
+    text-shadow: 0px 0px 1px black;
+}
+
+.menu-item-active:after {
+    position: relative;
+    content: '';
+    width: 30%;
+    left: 35%;
+    display: block;
+    margin-top: 5px;
+    border-bottom: 2px dashed rgba(84, 69, 101, 0.6);
+    margin-bottom: -10px;
+}
+
+.menu-item-active {
+    text-shadow: 0px 0px 1px black;
+}
+
+.main {
+    background-color: white;
+    box-shadow: -30px 0 30px -30px rgba(169, 169, 169, 0.8), 30px 0 30px -30px rgba(169, 169, 169, 0.8);
+}

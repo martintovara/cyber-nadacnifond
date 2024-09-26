@@ -1,5 +1,5 @@
 :root {
-    --main-color: #0f52ba;
+    --main-color: #4a7cd1;
 }
 
 html {
@@ -52,25 +52,6 @@ h3 {
 
 ::-webkit-scrollbar-thumb:hover {
     background: #777;
-}
-
-.menu ul li:hover {
-    text-shadow: 0px 0px 1px black;
-}
-
-.menu-item-active:after {
-    position: relative;
-    content: '';
-    width: 30%;
-    left: 35%;
-    display: block;
-    margin-top: 5px;
-    border-bottom: 2px dashed rgba(84, 69, 101, 0.6);
-    margin-bottom: -10px;
-}
-
-.menu-item-active {
-    text-shadow: 0px 0px 1px black;
 }
 
 .page-divider {
@@ -205,8 +186,6 @@ h3 {
 .main {
     height: auto;
     left: 50%;
-    background-color: white;
-    box-shadow: -30px 0 30px -30px rgba(169, 169, 169, 0.8), 30px 0 30px -30px rgba(169, 169, 169, 0.8);
 }
 
 .main-content {
@@ -259,6 +238,7 @@ h3 {
 .article-header {
     color: var(--main-color);
     font-weight: 600;
+    margin-top: 1%;
 }
 
 .article-img {
@@ -286,7 +266,7 @@ h3 {
 
 .article-divider {
     border-right: 4px dashed transparent;
-    border-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%) 1; /* Gradient fading out at top and bottom */
+    border-image: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.1) 50%, transparent 100%) 1;
 }
 
 .carousel {
