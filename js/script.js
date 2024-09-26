@@ -91,11 +91,22 @@ function getViewPercentage(id) {
     return Math.round(percentageInView);
 }
 
+function shuffleArray(array) {
+    const result = array.slice();
+    for (let i = result.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [result[i], result[j]] = [result[j], result[i]];
+    }
+    return result;
+}
+
 function addCarouselGalleryImgs() {
     let aux = 0;
 
     const inner = document.querySelector('.carousel-inner-gallery');
     let setFirst = false;
+
+    const arrImgs = shuffleArray(galleryImgs);
 
     for (const arrImg of arrImgs) {
         const item = document.createElement('div');
