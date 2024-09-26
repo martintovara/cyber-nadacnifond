@@ -1,5 +1,6 @@
 let current = '#home';
-const path = './img/gallery/';
+const pathGallery = './img/gallery/';
+const pathArticle = './img/gallery/';
 
 function setMarginMain() {
     const main = document.getElementsByClassName('banner-div')[0];
@@ -114,7 +115,7 @@ function addCarouselGalleryImgs() {
         item.setAttribute('data-bs-interval', '5000');
 
         const img = document.createElement('img');
-        img.src = path + arrImg;
+        img.src = pathGallery + arrImg;
         img.alt = 'galleryImage-' + arrImg;
 
         item.appendChild(img);
@@ -217,7 +218,7 @@ function addCarouselArticleImgs(arrImgs, aux) {
         item.className = 'carousel-item';
 
         const img = document.createElement('img');
-        img.src = path + arrImg;
+        img.src = pathArticle + arrImg;
         img.alt = 'articleImage-' + arrImg;
         item.appendChild(img);
         document.getElementById('innerCarousel' + aux).appendChild(item);
