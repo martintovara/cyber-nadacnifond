@@ -377,3 +377,13 @@ h3 {
         display: none;
     }
 }
+
+.carousel-control-prev {
+    transform: translateY(-50%);
+    transform: translateX(-35%);
+}
+
+.carousel-control-next {
+    transform: translateY(50%);
+    transform: translateX(35%);
+}
