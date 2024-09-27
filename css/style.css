@@ -349,6 +349,62 @@ h3 {
     color: var(--main-color);
 }
 
+.carousel-control-prev {
+    transform: translateY(-50%);
+    transform: translateX(-35%);
+}
+
+.carousel-control-next {
+    transform: translateY(50%);
+    transform: translateX(35%);
+}
+
+.card {
+    transition: all 0.6s ease-in-out;
+    width: 18rem;
+    height: 22rem;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-profile {
+    height: 17rem !important;
+}
+
+.card-btn {
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    text-align: center;
+    width: 50%;
+    background-color: var(--main-color);
+}
+
+.card-img {
+    display: flex;
+    height: 50%;
+    justify-content: center;
+}
+
+.card-img img {
+    object-fit: contain;
+}
+
+.card-title {
+    cursor: default;
+}
+
+.card-text {
+    cursor: default;
+}
+
+.card-href {
+    cursor: pointer !important;
+}
+
 @media screen and (max-width: 992px) {
     .article-middle {
         width: 97%;
@@ -376,14 +432,4 @@ h3 {
     .low-banner-row {
         display: none;
     }
-}
-
-.carousel-control-prev {
-    transform: translateY(-50%);
-    transform: translateX(-35%);
-}
-
-.carousel-control-next {
-    transform: translateY(50%);
-    transform: translateX(35%);
 }

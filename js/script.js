@@ -33,7 +33,7 @@ function makeToastWithMailto(text, duration, email) {
 
 function menuHighlight() {
     const menu = 'menu-item-active';
-    const pages = ['home', 'club', 'news', 'gallery', 'contact'];
+    const pages = ['home', 'club', 'news', 'gallery', 'supportingUs', 'contact'];
     for (const element of pages) {
         if (partInViewport(element) && getViewPercentage(element) > 49) {
             const active = document.getElementsByClassName(menu);
