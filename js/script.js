@@ -368,16 +368,62 @@ function createArticleGallery() {
 
 function showFullscreen(id) {
     const inner = document.getElementById(id);
-    const active = inner.querySelector('.active');
+    let active = inner.querySelector('.active');
     const imgElement = active.querySelector('img');
-
-    const imageSrc = imgElement.src;
     const fullscreenImage = document.getElementById('fullscreenImage');
-    fullscreenImage.src = imageSrc;
 
-    const footerButton = document.querySelector('#fullscreenModal .modal-footer button');
-    footerButton.textContent = 'Zavřít';
-    footerButton.style.width = '30%';
+    fullscreenImage.src = imgElement.src;
+
+    if (active.nextElementSibling) {
+        document.getElementById('nextFullscreen').classList.remove('d-none');
+        document.getElementById('prevFullscreen').classList.remove('d-none');
+    } else {
+        document.getElementById('nextFullscreen').classList.add('d-none');
+        document.getElementById('prevFullscreen').classList.add('d-none');
+    }
+
     const fullscreenModal = new bootstrap.Modal(document.getElementById('fullscreenModal'));
     fullscreenModal.show();
+
+    document.querySelector('.modal-body').onclick = function () {
+        showNextImage(inner);
+    };
+
+    document.getElementById('nextFullscreen').onclick = function () {
+        showNextImage(inner);
+    };
+
+    document.getElementById('prevFullscreen').onclick = function () {
+        showPreviousImage(inner);
+    };
+
+    document.onkeydown = function (event) {
+        if (event.key === 'ArrowRight') {
+            showNextImage(inner);
+        } else if (event.key === 'ArrowLeft') {
+            showPreviousImage(inner);
+        }
+    };
+
+    function showNextImage(inner) {
+        active.classList.remove('active');
+        let next = active.nextElementSibling;
+        if (!next) {
+            next = inner.firstElementChild;
+        }
+        next.classList.add('active');
+        active = next;
+        fullscreenImage.src = active.querySelector('img').src;
+    }
+
+    function showPreviousImage(inner) {
+        active.classList.remove('active');
+        let prev = active.previousElementSibling;
+        if (!prev) {
+            prev = inner.lastElementChild;
+        }
+        prev.classList.add('active');
+        active = prev;
+        fullscreenImage.src = active.querySelector('img').src;
+    }
 }

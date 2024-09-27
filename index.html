@@ -199,6 +199,23 @@
                         <script>
                             createArticleGallery();
                         </script>
+                        <!-- Modal for Fullscreen Image -->
+                        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                                <div class="modal-content">
+                                    <div class="modal-body d-flex justify-content-center align-items-center" style="height: 100%">
+                                        <img id="fullscreenImage" class="img-fluid" alt="FullscreenScreen" style="max-height: 100%; max-width: 100%" />
+                                    </div>
+                                    <div class="modal-footer d-flex justify-content-between">
+                                        <div class="d-flex w-25">
+                                            <button type="button" class="btn btn-secondary w-50 d-none" id="prevFullscreen">Předchozí</button>
+                                            <button type="button" class="btn btn-secondary w-50 ms-2 d-none" id="nextFullscreen">Další</button>
+                                        </div>
+                                        <button type="button" class="btn btn-danger w-25" id="closeButton" data-bs-dismiss="modal">Zavřít</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </section>
                 </div>
 
@@ -221,19 +238,6 @@
                                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                             <span class="visually-hidden">Další</span>
                                         </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <!-- Modal for Fullscreen Image -->
-                        <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel" aria-hidden="true">
-                            <div class="modal-dialog modal-dialog-centered modal-lg">
-                                <div class="modal-content">
-                                    <div class="modal-body">
-                                        <img id="fullscreenImage" class="img-fluid" alt="FullscreenScreen" />
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
                                     </div>
                                 </div>
                             </div>
