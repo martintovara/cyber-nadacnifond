@@ -12,7 +12,23 @@ function setMarginMain() {
 function copyEmail() {
     const email = document.getElementById('email').innerHTML;
     navigator.clipboard.writeText(email);
-    makeToastWithMailto('Email byl zkopírován do schránky', 5000, email);
+    makeToastWithMailto('E-mail byl zkopírován do schránky', 5000, email);
+}
+
+function makeToastWithMailto(text, duration, email) {
+    Toastify({
+        text,
+        duration,
+        newWindow: true,
+        close: false,
+        gravity: 'top',
+        position: 'center',
+        stopOnFocus: true,
+        onClick() {
+            window.location.href = 'mailto:' + email;
+        },
+        className: 'emailToast border',
+    }).showToast();
 }
 
 function menuHighlight() {

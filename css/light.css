@@ -31,3 +31,9 @@
 .modal-footer {
     background-color: var(--bg-light);
 }
+
+.emailToast {
+    color: black;
+    background: white;
+    box-shadow: 2px 2px 4px 0 rgba(0, 0, 0, 0.5);
+}

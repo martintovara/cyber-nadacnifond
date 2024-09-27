@@ -90,3 +90,9 @@ nav .navbar-nav li a:focus {
 #email {
     color: lightgray;
 }
+
+.emailToast {
+    color: lightgray;
+    background: var(--bg-dark);
+    box-shadow: 2px 2px 4px 0 rgba(255, 255, 255, 0.5);
+}
