@@ -103,10 +103,8 @@ function shuffleArray(array) {
 
 function addCarouselGalleryImgs() {
     let aux = 0;
-
     const inner = document.querySelector('.carousel-inner-gallery');
     let setFirst = false;
-
     const arrImgs = shuffleArray(galleryImgs);
 
     for (const arrImg of arrImgs) {
@@ -118,10 +116,15 @@ function addCarouselGalleryImgs() {
         img.src = pathGallery + arrImg;
         img.alt = 'galleryImage-' + arrImg;
 
+        item.style.cursor = 'pointer';
+        item.onclick = function () {
+            showFullscreenImage(arrImg, arrImgs);
+        };
+
         item.appendChild(img);
         inner.appendChild(item);
 
-        //Indicators
+        // Indicators
         const parentElement = document.querySelector('.carousel-indicators-gallery');
         const button1 = document.createElement('button');
         button1.type = 'button';
@@ -139,6 +142,58 @@ function addCarouselGalleryImgs() {
         parentElement.appendChild(button1);
         aux++;
     }
+}
+
+function showFullscreenImage(imgSrc, shuffledArray) {
+    const fullscreenImage = document.getElementById('fullscreenImage');
+    fullscreenImage.src = pathGallery + imgSrc;
+
+    let index = shuffledArray.indexOf(imgSrc);
+
+    const fullscreenModal = new bootstrap.Modal(document.getElementById('fullscreenModal'));
+    fullscreenModal.show();
+
+    document.getElementById('prevFullscreen').classList.remove('d-none');
+    document.getElementById('nextFullscreen').classList.remove('d-none');
+
+    document.querySelector('.modal-body').onclick = function () {
+        index = (index + 1) % shuffledArray.length;
+        showFullscreenImage(shuffledArray[index], shuffledArray);
+    };
+
+    document.getElementById('nextFullscreen').onclick = function () {
+        index = (index + 1) % shuffledArray.length;
+        showFullscreenImage(shuffledArray[index], shuffledArray);
+    };
+
+    document.getElementById('prevFullscreen').onclick = function () {
+        index = (index - 1 + shuffledArray.length) % shuffledArray.length;
+        showFullscreenImage(shuffledArray[index], shuffledArray);
+    };
+
+    document.onkeydown = function (event) {
+        if (event.key === 'ArrowRight') {
+            index = (index + 1) % shuffledArray.length;
+            showFullscreenImage(shuffledArray[index], shuffledArray);
+        } else if (event.key === 'ArrowLeft') {
+            index = (index - 1 + shuffledArray.length) % shuffledArray.length;
+            showFullscreenImage(shuffledArray[index], shuffledArray);
+        }
+    };
+
+    document.getElementById('closeButton').onclick = function () {
+        let modalBackdrops = document.querySelectorAll('.modal-backdrop.fade.show');
+
+        while (modalBackdrops.length > 0) {
+            modalBackdrops.forEach((backdrop) => backdrop.remove());
+            modalBackdrops = document.querySelectorAll('.modal-backdrop.fade.show');
+        }
+
+        const modalElement = document.getElementById('fullscreenModal');
+        modalElement.addEventListener('hidden.bs.modal', function () {
+            document.body.removeAttribute('style');
+        });
+    };
 }
 
 function switchMode() {

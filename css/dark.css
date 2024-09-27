@@ -32,14 +32,6 @@ nav .navbar-nav li a:focus {
 }
 
 .menu-item-active:after {
-    position: relative;
-    content: '';
-    width: 30%;
-    left: 35%;
-    display: block;
-    margin-top: 5px;
-    border-bottom: 2px dashed rgba(84, 69, 101, 0.6);
-    margin-bottom: -10px;
     filter: invert(100%);
 }
 
@@ -89,7 +81,6 @@ nav .navbar-nav li a:focus {
 
 .dark-contact {
     background-color: #222;
-    box-shadow: 0 0.3rem 0.6rem rgba(8, 8, 8, 0.6), 0 -0.1rem 0.4rem rgba(8, 8, 8, 0.5) !important;
 }
 
 .text-color-my {

@@ -149,21 +149,15 @@ h3 {
     padding: 1%;
 }
 
-.form-check-input:checked {
-    background-color: #bbb; /* Change this to your desired color */
-    border-color: #aaa; /* Change this to your desired border color */
-}
-
-.form-check-input:focus {
-    box-shadow: none;
-}
-
-.mode i {
-    padding: 10px;
-}
-
-.form-check-input {
-    scale: 1.5;
+.menu-item-active:after {
+    position: relative;
+    content: '';
+    width: 30%;
+    left: 35%;
+    display: block;
+    margin-top: 5px;
+    border-bottom: 2px solid rgba(105, 105, 105, 0.6);
+    margin-bottom: -10px;
 }
 
 .nav-border {
