@@ -139,7 +139,6 @@ h3 {
 
 .mode {
     margin-right: 2%;
-    background-color: var(--main-color);
     color: white;
     font-weight: bold;
     cursor: default;
@@ -330,8 +329,9 @@ h3 {
 
 .theme-switch {
     cursor: pointer;
-    color: #eee;
+    color: var(--main-color);
     width: 10%;
+    padding-bottom: 5px;
     min-width: 75px;
 }
 
@@ -460,8 +460,6 @@ h3 {
 }
 
 .btn-fullscreen {
-    background: rgba(0, 0, 0, 0.5);
-    color: white;
     width: 40px;
     height: 60px;
     border-radius: 0;
@@ -471,8 +469,6 @@ h3 {
     align-items: center;
 }
 
-.btn-fullscreen:hover {
-    transition: opacity 0.3s ease;
-    color: white;
-    background: rgba(0, 0, 0, 0.75);
+.menu-text {
+    font-size: 15pt;
 }

@@ -115,3 +115,21 @@ nav .navbar-nav li a:focus {
 .card-img {
     background-color: rgba(255, 255, 255, 0.75);
 }
+
+.btn-fullscreen {
+    color: black;
+    background-color: #ddd;
+}
+
+.btn-fullscreen:hover {
+    color: black;
+    background-color: #ddd;
+}
+
+.btn-close {
+    filter: invert(100%);
+}
+
+.menu-text {
+    filter: invert(100%);
+}
