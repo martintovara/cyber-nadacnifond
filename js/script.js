@@ -1,6 +1,7 @@
 let current = '#home';
 const pathGallery = './img/gallery/';
 const pathArticle = './img/gallery/';
+const pathSupportingUs = './img/supportingUs/';
 
 function setMarginMain() {
     const main = document.getElementsByClassName('banner-div')[0];
@@ -149,6 +150,10 @@ function addCarouselGalleryImgs() {
         button1.setAttribute('aria-current', 'true');
         button1.setAttribute('aria-label', 'Slide ' + aux);
 
+        if (arrImgs.length > 10) {
+            button1.classList.add('d-none');
+        }
+
         if (!setFirst) {
             item.className = 'carousel-item active';
             button1.classList.add('active');
@@ -156,6 +161,7 @@ function addCarouselGalleryImgs() {
         }
 
         parentElement.appendChild(button1);
+
         aux++;
     }
 }
@@ -506,5 +512,50 @@ function showFullscreen(id) {
         prev.classList.add('active');
         active = prev;
         fullscreenImage.src = active.querySelector('img').src;
+    }
+}
+
+function createCards() {
+    if (!dataSupportingUs) {
+        return;
+    }
+
+    const cards = document.getElementById('cards');
+
+    for (const data of dataSupportingUs) {
+        const cardDiv = document.createElement('div');
+        cardDiv.classList.add('card', 'p-3');
+
+        const cardImgDiv = document.createElement('div');
+        cardImgDiv.classList.add('card-img');
+
+        const img = document.createElement('img');
+        img.classList.add('card-img-top');
+        img.src = pathSupportingUs + data.logo;
+        img.alt = 'CardSupporting';
+
+        cardImgDiv.appendChild(img);
+
+        const cardBodyDiv = document.createElement('div');
+        cardBodyDiv.classList.add('card-body');
+
+        const cardTitle = document.createElement('h5');
+        cardTitle.classList.add('card-title');
+        cardTitle.textContent = data.name;
+
+        cardBodyDiv.appendChild(cardTitle);
+
+        const justifyDiv = document.createElement('div');
+        justifyDiv.classList.add('justify-content-end');
+
+        const cardHref = document.createElement('p');
+        cardHref.classList.add('card-href');
+        cardHref.textContent = data.web;
+        justifyDiv.appendChild(cardHref);
+        cardDiv.appendChild(cardImgDiv);
+        cardDiv.appendChild(cardBodyDiv);
+        cardDiv.appendChild(justifyDiv);
+
+        cards.appendChild(cardDiv);
     }
 }

@@ -33,8 +33,10 @@
         <link rel="stylesheet" href="css/style.css" />
         <link rel="stylesheet" href="css/light.css" id="cssMode" />
 
-        <script src="js/news.js"></script>
-        <script src="js/gallery.js"></script>
+        <script src="js/conf/news.js"></script>
+        <script src="js/conf/gallery.js"></script>
+        <script src="js/conf/supportingUs.js"></script>
+
         <script src="js/script.js"></script>
     </head>
 
@@ -219,7 +221,7 @@
                         <div class="container p-3">
                             <div class="row justify-content-center">
                                 <div class="article container shadow article-gallery">
-                                    <div id="carouselGallery" class="carousel slide carousel-fade" data-bs-ride="carousel">
+                                    <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
                                         <div class="carousel-indicators carousel-indicators-gallery"></div>
                                         <div class="carousel-inner carousel-inner-gallery"></div>
                                         <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
@@ -244,36 +246,10 @@
                     <section class="section-content">
                         <div class="container p-3">
                             <div class="row justify-content-center">
-                                <div class="row d-flex justify-content-center gap-4 gy-3 p-5 pt-1">
-                                    <div class="card p-3">
-                                        <div class="card-img">
-                                            <img class="card-img-top" src="img/supportingUs/logo1.png" alt="CardSupporting" />
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum company</h5>
-                                        </div>
-                                        <div class="justify-content-end"><p class="card-href">www.example.com</p></div>
-                                    </div>
-
-                                    <div class="card p-3">
-                                        <div class="card-img">
-                                            <img class="card-img-top" src="img/supportingUs/logo2.png" alt="CardSupporting" />
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum company 2</h5>
-                                        </div>
-                                        <div class="justify-content-end"><p class="card-href">www.example2.com</p></div>
-                                    </div>
-
-                                    <div class="card p-3">
-                                        <div class="card-img">
-                                            <img class="card-img-top" src="img/supportingUs/logo3.png" alt="CardSupporting" />
-                                        </div>
-                                        <div class="card-body">
-                                            <h5 class="card-title">Lorem ipsum company 3</h5>
-                                        </div>
-                                        <div class="justify-content-end"><p class="card-href">www.example3.com</p></div>
-                                    </div>
+                                <div class="row d-flex justify-content-center gap-4 gy-3 p-5 pt-1" id="cards">
+                                    <script>
+                                        createCards();
+                                    </script>
                                 </div>
                             </div>
                         </div>
