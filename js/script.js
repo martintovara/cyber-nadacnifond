@@ -42,7 +42,7 @@ function menuHighlight() {
                 active[0].classList.remove(menu);
             }
 
-            current = 'index#' + element;
+            current = element;
 
             document.getElementById('nav-' + element).classList.add(menu);
         }
