@@ -433,3 +433,22 @@ h3 {
         display: none;
     }
 }
+
+@media (max-width: 768px) {
+    .navbar-nav .nav-item .nav-link {
+        font-size: 1.2rem;
+        padding: 1rem 0.5rem;
+    }
+
+    .navbar-toggler {
+        font-size: 1.5rem;
+    }
+
+    .navbar-nav {
+        text-align: center;
+    }
+
+    .navbar-nav .nav-item {
+        margin: 0.5rem 0;
+    }
+}
