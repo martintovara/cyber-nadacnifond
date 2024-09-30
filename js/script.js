@@ -205,12 +205,18 @@ function showFullscreenImage(imgSrc, shuffledArray) {
             modalBackdrops.forEach((backdrop) => backdrop.remove());
             modalBackdrops = document.querySelectorAll('.modal-backdrop.fade.show');
         }
-
-        const modalElement = document.getElementById('fullscreenModal');
-        modalElement.addEventListener('hidden.bs.modal', function () {
-            document.body.removeAttribute('style');
-        });
     };
+
+    const modalElement = document.getElementById('fullscreenModal');
+    modalElement.addEventListener('hidden.bs.modal', function () {
+        const bannerDiv = document.querySelector('.banner-div');
+        if (bannerDiv) {
+            bannerDiv.style.margin = '0';
+            bannerDiv.style.padding = '0';
+        }
+
+        document.body.removeAttribute('style');
+    });
 }
 
 function removeStackedBackdrop() {
