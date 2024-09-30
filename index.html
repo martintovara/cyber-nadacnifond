@@ -333,15 +333,24 @@
                 <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModalLabel" aria-hidden="true">
                     <div class="modal-dialog modal-dialog-centered modal-fullscreen">
                         <div class="modal-content">
-                            <div class="modal-body d-flex justify-content-center align-items-center" style="height: 100%">
+                            <!-- Close Button (X) at the top right -->
+                            <button
+                                type="button"
+                                class="btn-close position-absolute top-0 end-0 p-3"
+                                id="closeButton"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                                style="padding: 1rem; border-radius: 50%; opacity: 0.8; z-index: 1000"></button>
+
+                            <div class="modal-body d-flex justify-content-center align-items-center position-relative" style="height: 100%">
+                                <!-- Fullscreen Image -->
                                 <img id="fullscreenImage" class="img-fluid" alt="FullscreenScreen" style="max-height: 100%; max-width: 100%" />
-                            </div>
-                            <div class="modal-footer d-flex justify-content-between">
-                                <div class="d-flex w-25">
-                                    <button type="button" class="btn btn-secondary w-50 d-none" id="prevFullscreen">Předchozí</button>
-                                    <button type="button" class="btn btn-secondary w-50 ms-2 d-none" id="nextFullscreen">Další</button>
-                                </div>
-                                <button type="button" class="btn btn-danger" id="closeButton" data-bs-dismiss="modal" style="width: 12.5%">Zavřít</button>
+
+                                <!-- Left Arrow Inside Image -->
+                                <button type="button" class="btn position-absolute top-50 start-0 translate-middle-y btn-fullscreen" id="prevFullscreen">&#10094;</button>
+
+                                <!-- Right Arrow Inside Image -->
+                                <button type="button" class="btn position-absolute top-50 end-0 translate-middle-y btn-fullscreen" id="nextFullscreen">&#10095;</button>
                             </div>
                         </div>
                     </div>

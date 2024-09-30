@@ -172,19 +172,18 @@ function showFullscreenImage(imgSrc, shuffledArray) {
     document.getElementById('prevFullscreen').classList.remove('d-none');
     document.getElementById('nextFullscreen').classList.remove('d-none');
 
-    document.querySelector('.modal-body').onclick = function () {
-        index = (index + 1) % shuffledArray.length;
-        showFullscreenImage(shuffledArray[index], shuffledArray);
-    };
-
     document.getElementById('nextFullscreen').onclick = function () {
         index = (index + 1) % shuffledArray.length;
         showFullscreenImage(shuffledArray[index], shuffledArray);
+
+        removeStackedBackdrop();
     };
 
     document.getElementById('prevFullscreen').onclick = function () {
         index = (index - 1 + shuffledArray.length) % shuffledArray.length;
         showFullscreenImage(shuffledArray[index], shuffledArray);
+
+        removeStackedBackdrop();
     };
 
     document.onkeydown = function (event) {
@@ -195,6 +194,8 @@ function showFullscreenImage(imgSrc, shuffledArray) {
             index = (index - 1 + shuffledArray.length) % shuffledArray.length;
             showFullscreenImage(shuffledArray[index], shuffledArray);
         }
+
+        removeStackedBackdrop();
     };
 
     document.getElementById('closeButton').onclick = function () {
@@ -210,6 +211,13 @@ function showFullscreenImage(imgSrc, shuffledArray) {
             document.body.removeAttribute('style');
         });
     };
+}
+
+function removeStackedBackdrop() {
+    const backdrop = document.querySelector('.modal-backdrop');
+    if (backdrop) {
+        backdrop.remove();
+    }
 }
 
 function switchMode() {
@@ -455,10 +463,6 @@ function showFullscreen(id) {
 
     const fullscreenModal = new bootstrap.Modal(document.getElementById('fullscreenModal'));
     fullscreenModal.show();
-
-    document.querySelector('.modal-body').onclick = function () {
-        showNextImage(inner);
-    };
 
     document.getElementById('nextFullscreen').onclick = function () {
         showNextImage(inner);
