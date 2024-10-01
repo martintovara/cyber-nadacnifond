@@ -108,6 +108,16 @@ h3 {
     font-family: 'Roboto', sans-serif;
 }
 
+.fa-envelope,
+.fa-brands {
+    font-size: 23pt;
+}
+
+.fa-sun,
+.fa-moon {
+    font-size: 20pt;
+}
+
 .klub {
     font-size: 42pt;
     font-weight: 500;
