@@ -1,6 +1,6 @@
 let current = '#home';
 const pathGallery = './img/gallery/';
-const pathArticle = './img/gallery/';
+const pathArticle = './img/news/';
 const pathSupportingUs = './img/supportingUs/';
 
 function setMarginMain() {

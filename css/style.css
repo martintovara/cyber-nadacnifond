@@ -27,6 +27,18 @@ img {
     user-drag: none;
 }
 
+strong {
+    color: var(--main-color);
+}
+
+.table {
+    border-color: none;
+}
+
+.table th {
+    color: var(--main-color);
+}
+
 h1,
 h2,
 h3 {
