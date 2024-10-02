@@ -351,9 +351,8 @@ function addCarouselArticleImgs(arrImgs, aux) {
         const carouselDiv = document.querySelector('.carousel-indicators-article' + aux);
         const buttonCount = carouselDiv.querySelectorAll('button').length;
 
-        document.querySelector('.carousel-indicators-article' + aux).classList.remove('d-none');
-
         if (buttonCount > 1) {
+            document.querySelector('.carousel-indicators-article' + aux).classList.remove('d-none');
             document.getElementById('prev-carousel' + aux).classList.remove('d-none');
             document.getElementById('next-carousel' + aux).classList.remove('d-none');
         }
@@ -363,9 +362,8 @@ function addCarouselArticleImgs(arrImgs, aux) {
         const carouselDiv = document.querySelector('.carousel-indicators-article' + aux);
         const buttonCount = carouselDiv.querySelectorAll('button').length;
 
-        document.querySelector('.carousel-indicators-article' + aux).classList.add('d-none');
-
         if (buttonCount > 1) {
+            document.querySelector('.carousel-indicators-article' + aux).classList.add('d-none');
             document.getElementById('prev-carousel' + aux).classList.add('d-none');
             document.getElementById('next-carousel' + aux).classList.add('d-none');
         }
