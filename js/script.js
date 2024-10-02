@@ -3,6 +3,19 @@ const pathGallery = './img/gallery/';
 const pathArticle = './img/news/';
 const pathSupportingUs = './img/supportingUs/';
 
+//Init observer for margin set when main is loaded
+document.addEventListener('DOMContentLoaded', () => {
+    const observer = new MutationObserver((_mutations, observerIn) => {
+        const main = document.getElementsByClassName('banner-div')[0];
+        if (main) {
+            setMarginMain();
+            observerIn.disconnect();
+        }
+    });
+
+    observer.observe(document.body, { childList: true, subtree: true });
+});
+
 function setMarginMain() {
     const main = document.getElementsByClassName('banner-div')[0];
     const clientHeight = main.clientHeight;
