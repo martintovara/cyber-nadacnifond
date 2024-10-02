@@ -275,6 +275,10 @@ h3 {
     padding: 20px;
 }
 
+.article-justify {
+    text-align: justify;
+}
+
 .article-gallery {
     max-height: 50vh;
     min-height: 300px;

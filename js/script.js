@@ -298,7 +298,7 @@ function createArticle(headerText, articleText, articleImgs, aux) {
 
     // Second column
     const col2 = document.createElement('div');
-    col2.classList.add('col-12', 'col-lg-5', 'article-text', 'text-center', 'align-self-center');
+    col2.classList.add('col-12', 'col-lg-5', 'article-text', 'align-self-center', 'article-justify');
     col2.innerHTML = articleText;
     row.appendChild(col2);
 
