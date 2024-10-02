@@ -133,3 +133,11 @@ nav .navbar-nav li a:focus {
 .menu-text {
     filter: invert(100%);
 }
+
+.table-dark-my {
+    --bs-table-bg: var(--bg-dark);
+}
+
+.table-dark-my td {
+    color: lightgray;
+}
