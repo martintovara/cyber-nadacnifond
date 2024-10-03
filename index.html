@@ -1,389 +1,403 @@
-    <!DOCTYPE html>
-    <html lang="cs">
-        <head>
-            <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1" />
+<!DOCTYPE html>
+<html lang="cs">
+    <head>
+        <!-- Meta tags -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-            <title>Klub nadačního fondu kybernetických sil</title>
-            <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+        <!-- Page Title -->
+        <title>Spolek informačních a kybernetických sil</title>
 
-            <link
-                href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
-                rel="stylesheet"
-                integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
-                crossorigin="anonymous" />
-            <script
-                src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-                crossorigin="anonymous"></script>
+        <!-- Bootstrap CSS and JS -->
+        <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+            integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+            crossorigin="anonymous" />
+        <script
+            src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
 
-            <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-            <script src="https://cdn.jsdelivr.net/npm/toastify-js" defer></script>
+        <!-- Toastify CSS and JS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+        <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
-            <script src="https://kit.fontawesome.com/b0fb217637.js" crossorigin="anonymous"></script>
+        <!-- FontAwesome -->
+        <script src="https://kit.fontawesome.com/b0fb217637.js" crossorigin="anonymous"></script>
 
-            <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
+        <!-- Google Fonts -->
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet" />
 
-            <script src="pkgs/particles-js/particles-cfg.js" defer></script>
-            <script src="pkgs/particles-js/particles.js"></script>
+        <!-- Particles.js -->
+        <script src="pkgs/particles-js/particles.js"></script>
+        <script src="pkgs/particles-js/particles-cfg.js" defer></script>
 
-            <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" href="img/favicon.ico" />
 
-            <link rel="stylesheet" href="css/style.css" />
-            <link rel="stylesheet" href="css/light.css" id="cssMode" />
+        <!-- Custom CSS -->
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/light.css" id="cssMode" />
 
-            <script src="js/conf/news.js"></script>
-            <script src="js/conf/gallery.js"></script>
-            <script src="js/conf/supportingUs.js"></script>
+        <!-- Custom JS -->
+        <script src="js/conf/news.js"></script>
+        <script src="js/conf/gallery.js"></script>
+        <script src="js/conf/supportingUs.js"></script>
+        <script src="js/script.js"></script>
+    </head>
 
-            <script src="js/script.js"></script>
-        </head>
+    <body onscroll="menuHighlight();" onload="menuHighlight(); setMarginMain();" onresize="setMarginMain();">
+        <script src="js/init.js"></script>
 
-        <body onscroll="menuHighlight();" onload="menuHighlight(); setMarginMain();" onresize="setMarginMain();">
-            <script src="js/init.js"></script>
-
-            <div id="particles-js" class="div-particles w-100 h-100 mode-particles" style="min-width: 576px"></div>
-            <div class="sticky-top banner-div" style="box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.15)">
-                <div class="banner mode-banner">
-                    <div class="row row-cols-2 banner-row">
-                        <div class="col-5 col-lg-4 d-flex align-items-center"></div>
-                        <div class="col-2 col-lg-4 text-center d-flex justify-content-center align-items-center centered-logo">
-                            <img src="img/logo.png" alt="logo" class="logo" draggable="false" />
-                        </div>
-                        <div class="col-5 col-lg-4 d-flex flex-column h-100">
-                            <div class="row row-cols-4 socials justify-content-end">
-                                <div class="col-auto">
-                                    <a href="mailto:"><i class="fa-solid fa-envelope"></i></a>
-                                </div>
-                                <div class="col-auto">
-                                    <a href="https://www.facebook.com/VeInKyS" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
-                                </div>
-                                <div class="col-auto">
-                                    <a href="https://x.com/VeInKyS"><i class="fa-brands fa-square-twitter"></i></a>
-                                </div>
+        <div id="particles-js" class="div-particles w-100 h-100 mode-particles" style="min-width: 576px"></div>
+        <div class="sticky-top banner-div" style="box-shadow: 0 4px 4px -4px rgba(0, 0, 0, 0.15)">
+            <div class="banner mode-banner">
+                <div class="row row-cols-2 banner-row">
+                    <div class="col-5 col-lg-4 d-flex align-items-center"></div>
+                    <div class="col-2 col-lg-4 text-center d-flex justify-content-center align-items-center centered-logo">
+                        <img src="img/logo.png" alt="logo" class="logo" draggable="false" />
+                    </div>
+                    <div class="col-5 col-lg-4 d-flex flex-column h-100">
+                        <div class="row row-cols-4 socials justify-content-end">
+                            <div class="col-auto">
+                                <a href="mailto:"><i class="fa-solid fa-envelope"></i></a>
                             </div>
-                            <div class="row row-cols-auto justify-content-end mt-auto disable-select" style="margin-right: 0.5%">
-                                <div class="mode pt-2 align-items-center">
-                                    <div class="row pt-1 text-center">
-                                        <div class="col theme-switch" data-bs-toggle="tooltip" data-bs-placement="top" title="Přepnout na světlý/tmavý mód" onclick="switchMode();">
-                                            <i class="fas fa-sun fa-xl" id="theme-icon"></i>
-                                        </div>
+                            <div class="col-auto">
+                                <a href="https://www.facebook.com/VeInKyS" target="_blank"><i class="fa-brands fa-square-facebook"></i></a>
+                            </div>
+                            <div class="col-auto">
+                                <a href="https://x.com/VeInKyS"><i class="fa-brands fa-square-twitter"></i></a>
+                            </div>
+                        </div>
+                        <div class="row row-cols-auto justify-content-end mt-auto disable-select" style="margin-right: 0.5%">
+                            <div class="mode pt-2 align-items-center">
+                                <div class="row pt-1 text-center">
+                                    <div class="col theme-switch" data-bs-toggle="tooltip" data-bs-placement="top" title="Přepnout na světlý/tmavý mód" onclick="switchMode();">
+                                        <i class="fas fa-sun fa-xl" id="theme-icon"></i>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <nav class="navbar navbar-expand-lg mode-navbar nav-border disable-select">
-                    <div class="container-fluid">
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
-                            <i class="fas fa-bars"></i>
-                            &nbsp;&nbsp;
-                            <span class="menu-text">Menu</span>
-                        </button>
-                        <div class="collapse navbar-collapse justify-content-center menu" id="navbar">
-                            <ul class="navbar-nav mb-2 mb-lg-0">
-                                <li class="nav-item mx-3">
-                                    <a class="nav-link" aria-current="page" href="#home" id="nav-home">O nás</a>
-                                </li>
-                                <li class="nav-item mx-3">
-                                    <a class="nav-link" aria-current="page" href="#club" id="nav-club">Klub kybernetických sil</a>
-                                </li>
-                                <li class="nav-item mx-3">
-                                    <a class="nav-link" aria-current="page" href="#news" id="nav-news">Novinky a akce</a>
-                                </li>
-                                <li class="nav-item mx-3">
-                                    <a class="nav-link" aria-current="page" href="#gallery" id="nav-gallery">Galerie</a>
-                                </li>
-                                <li class="nav-item mx-3 d-none">
-                                    <a class="nav-link" aria-current="page" href="#supportingUs" id="nav-supportingUs">Podporují nás</a>
-                                </li>
-                                <li class="nav-item mx-3">
-                                    <a class="nav-link" aria-current="page" href="#contact" id="nav-contact">Kontakt</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </nav>
             </div>
-            <div class="container-fluid middle h-100">
-                <div class="container main d-flex flex-column">
-                    <div class="main-content text-center" id="home">
-                        <!-- O nás -->
+            <nav class="navbar navbar-expand-lg mode-navbar nav-border disable-select">
+                <div class="container-fluid">
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
+                        <i class="fas fa-bars"></i>
+                        &nbsp;&nbsp;
+                        <span class="menu-text">Menu</span>
+                    </button>
+                    <div class="collapse navbar-collapse justify-content-center menu" id="navbar">
+                        <ul class="navbar-nav mb-2 mb-lg-0">
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" aria-current="page" href="#home" id="nav-home">O nás</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" aria-current="page" href="#club" id="nav-club">Klub kybernetických sil</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" aria-current="page" href="#news" id="nav-news">Novinky a akce</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" aria-current="page" href="#gallery" id="nav-gallery">Galerie</a>
+                            </li>
+                            <li class="nav-item mx-3 d-none">
+                                <a class="nav-link" aria-current="page" href="#supportingUs" id="nav-supportingUs">Podporují nás</a>
+                            </li>
+                            <li class="nav-item mx-3">
+                                <a class="nav-link" aria-current="page" href="#contact" id="nav-contact">Kontakt</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </div>
+        <div class="container-fluid middle h-100">
+            <div class="container main d-flex flex-column">
+                <div class="main-content text-center" id="home">
+                    <!-- O nás -->
+                    <section class="section-content pb-5">
                         <h1 class="section-name pt-5">O nás</h1>
                         <hr class="hr-section mb-4" />
-                        <section class="section-content pb-5">
-                            <div class="article container shadow">
-                                <div class="p-2 container justify-content-center text-start article-content">
-                                    <div class="row flex-wrap">
-                                        <div class="article-img w-100 d-flex justify-content-center">
-                                            <img src="img/cyberForces.png" alt="cyberForces" class="img-fluid" style="width: 80%" />
-                                        </div>
-                                        <div class="article-text">
-                                            <p>
-                                                Spolek informačních a kybernetických sil z.s. byl založen 2. března 2024 s cílem poskytovat možnost rozvoje a vzájemné spolupráce příslušníkům Informačních
-                                                a kybernetických sil AČR a laické veřejnosti.
-                                            </p>
-                                            <p>
-                                                Tato spolupráce může spočívat ve vzájemné edukaci, předávání zkušeností, společném pořádání veřejně a sociálně prospěšných aktivit a akcí a podpoře, ať už
-                                                finanční, materiální, nebo podpoře samotnou aktivitou.
-                                            </p>
-                                        </div>
+                        <div class="article container shadow">
+                            <div class="p-2 container justify-content-center text-start article-content">
+                                <div class="row flex-wrap">
+                                    <div class="article-img w-100 d-flex justify-content-center">
+                                        <img src="img/cyberForces.png" alt="cyberForces" class="img-fluid" style="width: 80%" />
                                     </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Klub -->
-                    <div class="main-content text-center page-divider" id="club">
-                        <h1 class="section-name pt-5 pb-0">Spolek informačních a kybernetických sil z.s.</h1>
-                        <hr class="hr-section mb-4" />
-                        <section class="section-content">
-                            <div class="article container shadow mb-5">
-                                <div class="d-flex justify-content-center text-center p-3">
-                                    <h3 class="article-header">Název, forma a sídlo</h3>
-                                </div>
-                                <div class="container text-start article-content">
-                                    <div class="row">
-                                        <div class="col-auto p-3 article-text border-0 w-100 d-flex justify-content-center">
-                                            <table class="table table-borderless w-100 mx-auto table-dark-my">
-                                                <tr>
-                                                    <th>Právní forma</th>
-                                                    <td>Spolek</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Spisová značka</th>
-                                                    <td>L 29614/KSBR Krajský soud v Brně</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Adresa sídla společnosti</th>
-                                                    <td>Salaš 222, 687 06 Salaš - Salaš</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>IČO</th>
-                                                    <td>21253790</td>
-                                                </tr>
-                                                <tr>
-                                                    <th>Číslo účtu</th>
-                                                    <td>XXXXXXXX/XXXX</td>
-                                                </tr>
-                                            </table>
-                                        </div>
+                                    <div class="article-text">
+                                        <p>
+                                            Spolek informačních a kybernetických sil z.s. byl založen 2. března 2024 s cílem poskytovat možnost rozvoje a vzájemné spolupráce příslušníkům Informačních
+                                            a kybernetických sil AČR a laické veřejnosti.
+                                        </p>
+                                        <p>
+                                            Tato spolupráce může spočívat ve vzájemné edukaci, předávání zkušeností, společném pořádání veřejně a sociálně prospěšných aktivit a akcí a podpoře, ať už
+                                            finanční, materiální, nebo podpoře samotnou aktivitou.
+                                        </p>
                                     </div>
-                                </div>
-                            </div>
-
-                            <div class="article container shadow mb-5">
-                                <div class="d-flex justify-content-center text-center p-2">
-                                    <h3 class="article-header">Charakter</h3>
-                                </div>
-                                <div class="container text-start article-content">
-                                    <div class="row">
-                                        <div class="col-auto p-3 article-text border-0">
-                                            <p>
-                                                Spolek je dobrovolným, nevládním, neziskovým sdružením občanů, v němž se sdružili zaměstnanci ve služebním a pracovním poměru Informačních a kybernetických
-                                                sil AČR. Spolek ve své činnosti vychází z Ústavy České republiky, Listiny základních práv a svobod, která je součástí ústavního práva České republiky a
-                                                mezinárodních dohod, jimiž je Česká republika vázána a ze zákonů České republiky.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="article container shadow mb-5">
-                                <div class="d-flex justify-content-center text-center p-2">
-                                    <h3 class="article-header">Účel spolku</h3>
-                                </div>
-                                <div class="container text-start article-content">
-                                    <div class="row">
-                                        <div class="col-auto p-3 article-text border-0">
-                                            <ul>
-                                                <li>
-                                                    Podílet se demokratickými metodami a v souladu s právními předpisy na formulování, účinné obhajobě, uspokojování a prosazování právem chráněných potřeb
-                                                    a zájmů členů Spolku.
-                                                </li>
-                                                <li>Poskytovat obecně prospěšné činnosti v oblasti občanské, ekonomické, sociální, zdravotní, sportovní a kulturní povahy.</li>
-                                                <li>
-                                                    Přispívat k vytváření kontaktů a udržování dobrých vztahů mezi informačními a kybernetickými silami a veřejností a k upevňování prestiže informačních a
-                                                    kybernetických sil ve společnosti.
-                                                </li>
-                                                <li>
-                                                    Přispívat k vytváření kontaktů a udržování dobrých vztahů mezi současnými zaměstnanci ve služebním nebo pracovním poměru a vysloužilými zaměstnanci,
-                                                    kterým služební nebo pracovní poměr skončil, a rozvíjet mezi nimi vzájemnou spolupráci a předávání zkušeností.
-                                                </li>
-                                                <li>Udržovat a rozvíjet tradice informačních a kybernetických sil.</li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Novinky a akce -->
-                    <div class="main-content text-center page-divider" id="news">
-                        <h1 class="section-name pt-5 pb-0">Novinky a akce</h1>
-                        <hr class="hr-section mb-4" />
-                        <section class="section-content" id="newsArticles">
-                            <script>
-                                createArticleGallery();
-                            </script>
-                        </section>
-                    </div>
-
-                    <div class="main-content text-center page-divider" id="gallery">
-                        <!-- Galerie -->
-                        <h1 class="section-name pt-5">Galerie</h1>
-                        <hr class="hr-section mb-4" />
-                        <section class="section-content">
-                            <div class="container p-3">
-                                <div class="row justify-content-center">
-                                    <div class="article container shadow article-gallery">
-                                        <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
-                                            <div class="carousel-indicators carousel-indicators-gallery"></div>
-                                            <div class="carousel-inner carousel-inner-gallery"></div>
-                                            <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
-                                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Předchozí</span>
-                                            </button>
-                                            <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
-                                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                                <span class="visually-hidden">Další</span>
-                                            </button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <div class="main-content text-center page-divider d-none" id="supportingUs">
-                        <!-- Podporují nás -->
-                        <h1 class="section-name pt-5">Podporují nás</h1>
-                        <hr class="hr-section mb-4" />
-                        <section class="section-content">
-                            <div class="container p-3">
-                                <div class="row justify-content-center">
-                                    <div class="row d-flex justify-content-center gap-4 gy-3 p-5 pt-1" id="cards">
-                                        <script>
-                                            createCards();
-                                        </script>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Kontakt -->
-                    <div class="main-content text-center page-divider" id="contact" style="min-width: 500px">
-                        <h1 class="section-name pt-5 pb-0">Kontakt</h1>
-                        <hr class="hr-section mb-4" />
-                        <section class="section-content">
-                            <div class="container p-3" style="width: 85%">
-                                <div class="row justify-content-center">
-                                    <div class="col-11 mb-3 members p-2 shadow rounded article">
-                                        <figure class="text-center">
-                                            <img src="img/acr_logo.png" alt="AČR logo" style="border-radius: 10px; width: 25%" class="mt-4 mb-4 acr-logo" />
-                                            <figcaption class="justify-content-center pt-4 w-75 mx-auto dark-contact" style="padding: 10px; font-size: 13pt; margin-top: 1%; cursor: default">
-                                                <span class="text-color-my">V případě potřeby nás kontaktujte na:</span>
-                                                <br />
-                                                <span
-                                                    style="font-size: 14pt; word-wrap: break-word; white-space: normal; cursor: pointer"
-                                                    class="fw-light"
-                                                    data-toggle="tooltip"
-                                                    data-placement="top"
-                                                    title="Kliknutím zkopírovat e-mailovou adresu"
-                                                    onclick="copyEmail();"
-                                                    id="email">
-                                                    loremIpsumEmail@lorem.cz
-                                                </span>
-                                                <br />
-                                                <br />
-                                                <div>
-                                                    <div class="col-auto p-3 article-text border-0 w-100 d-flex justify-content-center">
-                                                        <table class="table table-borderless w-100 mx-auto text-start table-dark-my">
-                                                            <tr>
-                                                                <th>Adresa sídla společnosti</th>
-                                                                <td>Salaš 222, 687 06 Salaš - Salaš</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>IČO</th>
-                                                                <td>21253790</td>
-                                                            </tr>
-                                                            <tr>
-                                                                <th>Číslo účtu</th>
-                                                                <td>XXXXXXXX/XXXX</td>
-                                                            </tr>
-                                                        </table>
-                                                    </div>
-                                                </div>
-                                            </figcaption>
-                                        </figure>
-                                    </div>
-                                    <div class="col-1 mb-3 p-2 contact-icons justify-content-center gy-1">
-                                        <div>
-                                            <a href="mailto:" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktuje nás skrze náš email!" style="color: #4a7cd1">
-                                                <i class="fa-solid fa-envelope fa-2x"></i>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a
-                                                href="https://www.facebook.com/VeInKyS"
-                                                target="_blank"
-                                                class="m-3"
-                                                data-toggle="tooltip"
-                                                data-placement="top"
-                                                title="Kontaktujte nás na našem Facebooku!"
-                                                style="color: #4a7cd1">
-                                                <i class="fa-brands fa-square-facebook fa-2x"></i>
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <a href="https://x.com/VeInKyS" class="m-3" style="color: #4a7cd1">
-                                                <i class="fa-brands fa-square-twitter fa-2x"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </section>
-                    </div>
-
-                    <!-- Modal for Fullscreen Image -->
-                    <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModal" aria-hidden="true">
-                        <div class="modal-dialog modal-dialog-centered modal-fullscreen">
-                            <div class="modal-content">
-                                <button
-                                    type="button"
-                                    class="btn-close position-absolute top-0 end-0 p-3"
-                                    id="closeButton"
-                                    data-bs-dismiss="modal"
-                                    aria-label="Close"
-                                    style="padding: 1rem; border-radius: 50%; opacity: 0.8; z-index: 1000"></button>
-
-                                <div class="modal-body d-flex justify-content-center align-items-center position-relative" style="height: 100%">
-                                    <!-- Fullscreen Image -->
-                                    <img id="fullscreenImage" class="img-fluid" alt="FullscreenScreen" style="max-height: 100%; max-width: 100%" />
-
-                                    <!-- Left Arrow Inside Image -->
-                                    <button type="button" class="btn position-absolute top-50 start-0 translate-middle-y btn-fullscreen" id="prevFullscreen">&#10094;</button>
-
-                                    <!-- Right Arrow Inside Image -->
-                                    <button type="button" class="btn position-absolute top-50 end-0 translate-middle-y btn-fullscreen" id="nextFullscreen">&#10095;</button>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </section>
+                </div>
 
-                    <!-- Footer -->
-                    <div class="footer footer-border w-100 pt-2">
-                        <div class="row justify-content-center footer-info">
-                            <div class="col-auto disable-select">
-                                <p>&copy; 2024 Spolek informačních a kybernetických sil. Všechna práva vyhrazena.</p>
+                <!-- Klub -->
+                <div class="main-content text-center page-divider" id="club">
+                    <section class="section-content">
+                        <h1 class="section-name pt-5 pb-0">Spolek informačních a kybernetických sil z.s.</h1>
+                        <hr class="hr-section mb-4" />
+                        <div class="article container shadow mb-5">
+                            <div class="d-flex justify-content-center text-center p-3">
+                                <h3 class="article-header">Název, forma a sídlo</h3>
+                            </div>
+                            <div class="container text-start article-content">
+                                <div class="row">
+                                    <div class="col-auto p-3 article-text border-0 w-100 d-flex justify-content-center">
+                                        <table class="table table-borderless w-100 mx-auto table-dark-my">
+                                            <tr>
+                                                <th>Právní forma</th>
+                                                <td>Spolek</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Spisová značka</th>
+                                                <td>L 29614/KSBR Krajský soud v Brně</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Adresa sídla společnosti</th>
+                                                <td>Salaš 222, 687 06 Salaš - Salaš</td>
+                                            </tr>
+                                            <tr>
+                                                <th>IČO</th>
+                                                <td>21253790</td>
+                                            </tr>
+                                            <tr>
+                                                <th>Číslo účtu</th>
+                                                <td>XXXXXXXX/XXXX</td>
+                                            </tr>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article container shadow mb-5">
+                            <div class="d-flex justify-content-center text-center p-2">
+                                <h3 class="article-header">Charakter</h3>
+                            </div>
+                            <div class="container text-start article-content">
+                                <div class="row">
+                                    <div class="col-auto p-3 article-text border-0">
+                                        <p>
+                                            Spolek je dobrovolným, nevládním, neziskovým sdružením občanů, v němž se sdružili zaměstnanci ve služebním a pracovním poměru Informačních a kybernetických
+                                            sil AČR. Spolek ve své činnosti vychází z Ústavy České republiky, Listiny základních práv a svobod, která je součástí ústavního práva České republiky a
+                                            mezinárodních dohod, jimiž je Česká republika vázána a ze zákonů České republiky.
+                                        </p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="article container shadow mb-5">
+                            <div class="d-flex justify-content-center text-center p-2">
+                                <h3 class="article-header">Účel spolku</h3>
+                            </div>
+                            <div class="container text-start article-content">
+                                <div class="row">
+                                    <div class="col-auto p-3 article-text border-0">
+                                        <ul>
+                                            <li>
+                                                Podílet se demokratickými metodami a v souladu s právními předpisy na formulování, účinné obhajobě, uspokojování a prosazování právem chráněných potřeb
+                                                a zájmů členů Spolku.
+                                            </li>
+                                            <li>Poskytovat obecně prospěšné činnosti v oblasti občanské, ekonomické, sociální, zdravotní, sportovní a kulturní povahy.</li>
+                                            <li>
+                                                Přispívat k vytváření kontaktů a udržování dobrých vztahů mezi informačními a kybernetickými silami a veřejností a k upevňování prestiže informačních a
+                                                kybernetických sil ve společnosti.
+                                            </li>
+                                            <li>
+                                                Přispívat k vytváření kontaktů a udržování dobrých vztahů mezi současnými zaměstnanci ve služebním nebo pracovním poměru a vysloužilými zaměstnanci,
+                                                kterým služební nebo pracovní poměr skončil, a rozvíjet mezi nimi vzájemnou spolupráci a předávání zkušeností.
+                                            </li>
+                                            <li>Udržovat a rozvíjet tradice informačních a kybernetických sil.</li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Novinky a akce -->
+                <div class="main-content text-center page-divider" id="news">
+                    <section class="section-content" id="newsArticles">
+                        <h1 class="section-name pt-5 pb-0">Novinky a akce</h1>
+                        <hr class="hr-section mb-4" />
+                        <script>
+                            createArticleGallery();
+                        </script>
+                    </section>
+                </div>
+
+                <div class="main-content text-center page-divider" id="gallery">
+                    <!-- Galerie -->
+                    <section class="section-content">
+                        <h1 class="section-name pt-5">Galerie</h1>
+                        <hr class="hr-section mb-4" />
+                        <div class="container p-3">
+                            <div class="row justify-content-center">
+                                <div class="article container shadow article-gallery">
+                                    <div id="carouselGallery" class="carousel slide" data-bs-ride="carousel">
+                                        <div class="carousel-indicators carousel-indicators-gallery"></div>
+                                        <div class="carousel-inner carousel-inner-gallery"></div>
+                                        <button class="carousel-control-prev" type="button" data-bs-target="#carouselGallery" data-bs-slide="prev">
+                                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Předchozí</span>
+                                        </button>
+                                        <button class="carousel-control-next" type="button" data-bs-target="#carouselGallery" data-bs-slide="next">
+                                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                            <span class="visually-hidden">Další</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <div class="main-content text-center page-divider d-none" id="supportingUs">
+                    <!-- Podporují nás -->
+                    <section class="section-content">
+                        <h1 class="section-name pt-5">Podporují nás</h1>
+                        <hr class="hr-section mb-4" />
+                        <div class="container p-3">
+                            <div class="row justify-content-center">
+                                <div class="row d-flex justify-content-center gap-4 gy-3 p-5 pt-1" id="cards">
+                                    <script>
+                                        createCards();
+                                    </script>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Kontakt -->
+                <div class="main-content text-center page-divider" id="contact" style="min-width: 500px">
+                    <section class="section-content">
+                        <h1 class="section-name pt-5 pb-0">Kontakt</h1>
+                        <hr class="hr-section mb-4" />
+                        <div class="container p-3" style="width: 85%">
+                            <div class="row justify-content-center">
+                                <div class="col-11 mb-3 members p-2 shadow rounded article">
+                                    <figure class="text-center">
+                                        <img src="img/acr_logo.png" alt="AČR logo" style="border-radius: 10px; width: 25%" class="mt-4 mb-4 acr-logo" />
+                                        <figcaption class="justify-content-center pt-4 w-75 mx-auto dark-contact" style="padding: 10px; font-size: 13pt; margin-top: 1%; cursor: default">
+                                            <span class="text-color-my">V případě potřeby nás kontaktujte na:</span>
+                                            <br />
+                                            <span
+                                                style="font-size: 14pt; word-wrap: break-word; white-space: normal; cursor: pointer"
+                                                class="fw-light"
+                                                data-toggle="tooltip"
+                                                data-placement="top"
+                                                title="Kliknutím zkopírovat e-mailovou adresu"
+                                                onclick="copyEmail();"
+                                                id="email">
+                                                loremIpsumEmail@lorem.cz
+                                            </span>
+                                            <br />
+                                            <br />
+                                            <div>
+                                                <div class="col-auto p-3 article-text border-0 w-100 d-flex justify-content-center">
+                                                    <table class="table table-borderless w-100 mx-auto text-start table-dark-my">
+                                                        <tr>
+                                                            <th>Adresa sídla společnosti</th>
+                                                            <td>Salaš 222, 687 06 Salaš - Salaš</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>IČO</th>
+                                                            <td>21253790</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <th>Číslo účtu</th>
+                                                            <td>XXXXXXXX/XXXX</td>
+                                                        </tr>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </figcaption>
+                                    </figure>
+                                </div>
+                                <div class="col-1 mb-3 p-2 contact-icons justify-content-center gy-1">
+                                    <div>
+                                        <a href="mailto:" class="m-3" data-toggle="tooltip" data-placement="top" title="Kontaktuje nás skrze náš email!" style="color: #4a7cd1">
+                                            <i class="fa-solid fa-envelope fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a
+                                            href="https://www.facebook.com/VeInKyS"
+                                            target="_blank"
+                                            class="m-3"
+                                            data-toggle="tooltip"
+                                            data-placement="top"
+                                            title="Kontaktujte nás na našem Facebooku!"
+                                            style="color: #4a7cd1">
+                                            <i class="fa-brands fa-square-facebook fa-2x"></i>
+                                        </a>
+                                    </div>
+                                    <div>
+                                        <a href="https://x.com/VeInKyS" class="m-3" style="color: #4a7cd1">
+                                            <i class="fa-brands fa-square-twitter fa-2x"></i>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                </div>
+
+                <!-- Modal for Fullscreen Image -->
+                <div class="modal fade" id="fullscreenModal" tabindex="-1" aria-labelledby="fullscreenModal" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered modal-fullscreen">
+                        <div class="modal-content">
+                            <button
+                                type="button"
+                                class="btn-close position-absolute top-0 end-0 p-3"
+                                id="closeButton"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                                style="padding: 1rem; border-radius: 50%; opacity: 0.8; z-index: 1000"></button>
+
+                            <div class="modal-body d-flex justify-content-center align-items-center position-relative" style="height: 100%">
+                                <!-- Fullscreen Image -->
+                                <img
+                                    id="fullscreenImage"
+                                    class="img-fluid"
+                                    alt="FullscreenScreen"
+                                    style="max-height: 100%; max-width: 100%"
+                                    src="data:image/gif;base64,R0lGODlhAQABAAD/ACwAAAAAAQABAAACADs=" />
+
+                                <!-- Left Arrow Inside Image -->
+                                <button type="button" class="btn position-absolute top-50 start-0 translate-middle-y btn-fullscreen" id="prevFullscreen">&#10094;</button>
+
+                                <!-- Right Arrow Inside Image -->
+                                <button type="button" class="btn position-absolute top-50 end-0 translate-middle-y btn-fullscreen" id="nextFullscreen">&#10095;</button>
                             </div>
                         </div>
                     </div>
                 </div>
+
+                <!-- Footer -->
+                <div class="footer footer-border w-100 pt-2">
+                    <div class="row justify-content-center footer-info">
+                        <div class="col-auto disable-select">
+                            <p>&copy; 2024 Spolek informačních a kybernetických sil. Všechna práva vyhrazena.</p>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </body>
-    </html>
+        </div>
+    </body>
+</html>
