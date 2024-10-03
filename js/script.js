@@ -3,6 +3,7 @@ const pathGallery = './img/gallery/';
 const pathArticle = './img/news/';
 const pathSupportingUs = './img/supportingUs/';
 
+/** Function for setting up margin of main page content */
 function setMarginMain() {
     const main = document.getElementsByClassName('banner-div')[0];
     const clientHeight = main.clientHeight;
@@ -10,12 +11,14 @@ function setMarginMain() {
     document.getElementsByClassName('main')[0].style.margin = clientHeight + 'px auto 0 auto';
 }
 
+/** Function that copy email address to clipboard */
 function copyEmail() {
     const email = document.getElementById('email').innerHTML;
     navigator.clipboard.writeText(email);
     makeToastWithMailto('E-mail byl zkopírován do schránky', 5000, email);
 }
 
+/** Function that show toast notification when email is copied */
 function makeToastWithMailto(text, duration, email) {
     Toastify({
         text,
@@ -32,6 +35,7 @@ function makeToastWithMailto(text, duration, email) {
     }).showToast();
 }
 
+/** Function that handles menu highlighting when scrolling - based on percentage viewport */
 function menuHighlight() {
     const menu = 'menu-item-active';
     const pages = ['home', 'club', 'news', 'gallery', 'supportingUs', 'contact'];
@@ -49,6 +53,7 @@ function menuHighlight() {
     }
 }
 
+/** Function that checks if element is in viewport */
 function partInViewport(id) {
     if (!id) {
         return;
@@ -65,6 +70,7 @@ function partInViewport(id) {
     return y < hw && y + h > 0 && x < ww && x + w > 0;
 }
 
+/** Function that returns percentage visibility of element */
 function getViewPercentage(id) {
     const element = document.getElementById(id);
 
@@ -109,6 +115,7 @@ function getViewPercentage(id) {
     return Math.round(percentageInView);
 }
 
+/** Function that shuffle array randomly */
 function shuffleArray(array) {
     const result = array.slice();
     for (let i = result.length - 1; i > 0; i--) {
@@ -118,6 +125,7 @@ function shuffleArray(array) {
     return result;
 }
 
+/** Function that adds carousel imgs to gallery */
 function addCarouselGalleryImgs() {
     let aux = 0;
     const inner = document.querySelector('.carousel-inner-gallery');
@@ -166,6 +174,7 @@ function addCarouselGalleryImgs() {
     }
 }
 
+/** Function that shows Gallery imgs in fullscreen modal */
 function showFullscreenImage(imgSrc, shuffledArray) {
     const fullscreenImage = document.getElementById('fullscreenImage');
     fullscreenImage.src = pathGallery + imgSrc;
@@ -225,6 +234,7 @@ function showFullscreenImage(imgSrc, shuffledArray) {
     });
 }
 
+/** Function that handles removing of backdrop that is sometimes created multiple times in body when browsing through gallery */
 function removeStackedBackdrop() {
     const backdrop = document.querySelector('.modal-backdrop');
     if (backdrop) {
@@ -232,6 +242,7 @@ function removeStackedBackdrop() {
     }
 }
 
+/** Function that switch theme of web */
 function switchMode() {
     const themeIcon = document.getElementById('theme-icon');
 
@@ -250,10 +261,12 @@ function switchMode() {
     }
 }
 
+/** Function that detects OS theme of end user */
 function detectOSTheme() {
     return window.matchMedia?.('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
 }
 
+/** Function that switch from default light theme to dark when OS theme is set to dark */
 function themeBasedOnUser() {
     if (detectOSTheme() === 'dark') {
         themeIcon = document.getElementById('theme-icon');
@@ -263,7 +276,8 @@ function themeBasedOnUser() {
     }
 }
 
-function createArticle(headerText, articleText, articleImgs, aux) {
+/** Function that generated news from JSON in news.js */
+function createInvNews(headerText, articleText, articleImgs, aux) {
     // Create the main container div
     const article = document.createElement('div');
     article.classList.add('article', 'container-fluid', 'shadow', 'mb-5');
@@ -309,12 +323,13 @@ function createArticle(headerText, articleText, articleImgs, aux) {
     // Append the article container to the body or another element
     document.getElementById('newsArticles').appendChild(article);
 
-    addCarouselArticleImgs(articleImgs, aux);
+    addCarouselNewsImgs(articleImgs, aux);
 
     aux++;
 }
 
-function addCarouselArticleImgs(arrImgs, aux) {
+/** Function that adds carousel imgs to individual news */
+function addCarouselNewsImgs(arrImgs, aux) {
     let setFirst = false;
     let localAux = 0;
     for (const arrImg of arrImgs) {
@@ -370,6 +385,7 @@ function addCarouselArticleImgs(arrImgs, aux) {
     };
 }
 
+/** Method that creates carousel for gallery */
 function createCarousel(col, aux) {
     // Create the main carousel container
     const carousel = document.createElement('div');
@@ -442,19 +458,21 @@ function createCarousel(col, aux) {
     col.appendChild(carousel);
 }
 
-function createArticleGallery() {
-    if (!dataArticles) {
+/** Function that create news*/
+function createNews() {
+    if (!dataNews) {
         return;
     }
 
     let aux = 0;
 
-    for (const dataArticle of dataArticles) {
-        createArticle(dataArticle.header, dataArticle.text, dataArticle.imgs, aux);
+    for (const dataNew of dataNews) {
+        createInvNews(dataNew.header, dataNew.text, dataNew.imgs, aux);
         aux++;
     }
 }
 
+/** Function that shows fullscreen imgs in news */
 function showFullscreen(id) {
     const inner = document.getElementById(id);
     let active = inner.querySelector('.active');
@@ -490,6 +508,7 @@ function showFullscreen(id) {
         }
     };
 
+    /** Function that handles show next image */
     function showNextImage(inner) {
         active.classList.remove('active');
         let next = active.nextElementSibling;
@@ -501,6 +520,7 @@ function showFullscreen(id) {
         fullscreenImage.src = active.querySelector('img').src;
     }
 
+    /** Function that handles show previous image */
     function showPreviousImage(inner) {
         active.classList.remove('active');
         let prev = active.previousElementSibling;
@@ -513,6 +533,7 @@ function showFullscreen(id) {
     }
 }
 
+/** Method that create cards of supporting us from JSON in supportingUs.js */
 function createCards() {
     if (!dataSupportingUs) {
         return;
